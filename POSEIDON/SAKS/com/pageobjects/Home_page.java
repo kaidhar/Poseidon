@@ -19,8 +19,9 @@ public class Home_page {
     }
 
 
-
-    @FindBy(how = How.XPATH ,using = ".//*[@href='http://qa.saks.com/main/context_chooser.jsp']")
+    final String s=".//*[@href='http://qa.saks.com/main/context_chooser.jsp']";
+    @FindBy(how = How.XPATH ,using = s)
+    
     WebElement ClosePopup;
 
     @FindBy(how = How.XPATH,using = ".//*[@class='hbc-ship-to__copy']")
