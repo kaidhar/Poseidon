@@ -2,15 +2,15 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="187431" started-at="2018-11-18T17:00:36Z" finished-at="2018-11-18T17:03:43Z">
+  <suite name="Default suite" duration-ms="308766" started-at="2018-11-21T10:30:45Z" finished-at="2018-11-21T10:35:54Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="187431" started-at="2018-11-18T17:00:36Z" finished-at="2018-11-18T17:03:43Z">
+    <test name="Default test" duration-ms="308766" started-at="2018-11-21T10:30:45Z" finished-at="2018-11-21T10:35:54Z">
       <class name="OMS.POSEIDON.Tests">
-        <test-method status="PASS" signature="LTWEBCreateOrder()[pri:0, instance:OMS.POSEIDON.Tests@5b275dab]" name="LTWEBCreateOrder" duration-ms="187413" started-at="2018-11-18T17:00:36Z" finished-at="2018-11-18T17:03:43Z">
+        <test-method status="PASS" signature="TestsForSAKS()[pri:0, instance:OMS.POSEIDON.Tests@548e7350]" name="TestsForSAKS" duration-ms="308748" started-at="2018-11-21T10:30:45Z" finished-at="2018-11-21T10:35:54Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- LTWEBCreateOrder -->
+        </test-method> <!-- TestsForSAKS -->
       </class> <!-- OMS.POSEIDON.Tests -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
