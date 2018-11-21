@@ -2,11 +2,17 @@
 package com.BaseClass;
 import com.helper.BrowserFactory;
 import com.pageobjects.*;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.Properties;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 
@@ -15,15 +21,27 @@ import org.testng.annotations.Test;
 public class SingleLineAllTenderTypes {
 
     static boolean result=false;
+    Properties prop = new Properties();
+	InputStream input = null;
+    
+	@BeforeClass
+    public void loadPropertiesFile() {
+    	input = this.getClass().getResourceAsStream("SAKS.properties");
+		try {
+			prop.load(input);
+		} catch (IOException e) {
+			System.out.println("File not found");
+			e.printStackTrace();
+		}
+    }
 
     @Test(priority = 0,enabled=false)
     public void SinglineVisa() throws InterruptedException {
-        WebDriver driver = BrowserFactory.launchBrowser("chrome", "https://www.qa.saks.com/Entry.jsp");
+        WebDriver driver = BrowserFactory.launchBrowser(prop.getProperty("WebURL"), prop.getProperty("WebURL"));
         try {
 
             Home_page homePage = PageFactory.initElements(driver, Home_page.class);
             homePage.Close_popup();
-            System.out.println("sad");
 
             SkuSearchpage skusearch = PageFactory.initElements(driver,SkuSearchpage.class);
             skusearch.SearchSku();
@@ -56,7 +74,7 @@ public class SingleLineAllTenderTypes {
             pay.CardYear();
             pay.CardCvv();
             Thread.sleep(2000);
-            pay.cardnumber("visa");
+            pay.cardnumber(prop.getProperty("CreditcardVISA"));
             pay.confirmPayment();
             Thread.sleep(3000);
 
