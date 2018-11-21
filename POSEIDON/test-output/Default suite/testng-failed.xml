@@ -5,7 +5,7 @@
     <classes>
       <class name="OMS.POSEIDON.Tests">
         <methods>
-          <include name="LTWEBCreateOrder"/>
+          <include name="TestsForSAKS"/>
         </methods>
       </class> <!-- OMS.POSEIDON.Tests -->
     </classes>

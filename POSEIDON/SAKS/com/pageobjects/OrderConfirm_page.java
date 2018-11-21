@@ -40,7 +40,7 @@ public class OrderConfirm_page {
         Thread.sleep(2000);
         String OrderNo=driver.findElement(By.xpath(".//*[@href='/account/order-history']")).getText();
         System.out.println("orderno :  " + OrderNo);
-		return OrderNo;
+		return "0"+OrderNo;
 		}
 
 
