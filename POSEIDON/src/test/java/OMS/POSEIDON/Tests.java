@@ -1,6 +1,7 @@
 package OMS.POSEIDON;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import org.jdom2.JDOMException;
 import org.json.JSONException;
@@ -35,7 +36,30 @@ public class Tests {
 		}
 
 		else
-			System.out.println("Order has not reached OMS");
+			{System.out.println("Order has not reached OMS");}
+		
+		ArrayList<String> Status = Calls.getOrderStatus(OrderID, Banner);
+		
+		switch(Status.get(1)){
+		
+		case "Released": Calls.ShipSLSQOrder(OrderID, Banner,Status.get(2));
+		break;
+		
+		//case "Ready for Backroom Pick": Calls.callWebSOM();
+		//break;
+		
+		
+		}
+		
+		if(Status.equals("Released"))
+		{
+			
+			
+			
+		}
+
+		
+		
 	}
 
 }
