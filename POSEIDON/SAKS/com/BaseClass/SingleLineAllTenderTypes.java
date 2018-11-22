@@ -43,6 +43,7 @@ public class SingleLineAllTenderTypes {
             Home_page homePage = PageFactory.initElements(driver, Home_page.class);
             homePage.Close_popup();
 
+
             SkuSearchpage skusearch = PageFactory.initElements(driver,SkuSearchpage.class);
             skusearch.SearchSku();
 
