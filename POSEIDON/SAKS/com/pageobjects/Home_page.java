@@ -3,6 +3,12 @@
 package com.pageobjects;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.Properties;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -11,24 +17,35 @@ import org.openqa.selenium.support.How;
 
 public class Home_page {
 
-    WebDriver driver;
+	 WebDriver driver;
+	    Properties prop = new Properties();
+	    InputStream input = null;
 
     public Home_page(WebDriver ldriver)
     {
         this.driver=ldriver;
     }
+    public void loadPropertiesFile() {
+        String filepath=System.getProperty("user.dir")+"//Testdata/SAKS.properties";
+        
+        try {
+            input = new FileInputStream(filepath);
+            prop.load(input);
+        } catch (IOException e) {
+            System.out.println("File not found");
+            e.printStackTrace();
+        }
+   }
+   
 
 
+    WebElement ClosePopup = driver.findElement(By.name(prop.getProperty("closepopup")));
 
-    @FindBy(how = How.XPATH ,using = ".//*[@href='http://qa.saks.com/main/context_chooser.jsp']")
-    WebElement ClosePopup;
+    WebElement ChangeCountry = driver.findElement(By.name(prop.getProperty("Changeountry")));
+    
+    WebElement SwitchTous = driver.findElement(By.name(prop.getProperty("Switchus")));
 
-    @FindBy(how = How.XPATH,using = ".//*[@class='hbc-ship-to__copy']")
-    WebElement ChangeCountry;
-
-    @FindBy(how = How.XPATH,using = ".//*[@class='text-decor-border-bottom']")
-    WebElement SwitchTous;
-
+   
     public void Close_popup(){
         ClosePopup.click();
     }

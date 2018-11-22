@@ -17,9 +17,7 @@ public class Tests {
 	public void TestsForSAKS() throws JSONException, IOException, JDOMException, InterruptedException {
 
 		SingleLineAllTenderTypes SQATT = new SingleLineAllTenderTypes();
-		//String OrderID = SQATT.SingleLineAmex();
-		
-		String OrderID="073069669";
+	    String OrderID = SQATT.SingleLineAmex();
 		String Banner = "SAKS";
 		OMSCalls Calls = new OMSCalls();
 		int ResponseCode = Calls.getOrderDetails(OrderID, Banner);
