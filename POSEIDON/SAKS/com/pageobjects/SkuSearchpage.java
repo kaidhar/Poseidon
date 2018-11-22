@@ -36,10 +36,9 @@ public class SkuSearchpage {
              e.printStackTrace();
          }
     }
-    //@FindBy(how = How.XPATH, using = ".//*[@name='SearchString']")
+    
+    
     WebElement Search = driver.findElement(By.name(prop.getProperty("Searchsku")));
-   
-
     public void SearchSku()
     {
         Search.sendKeys("0467558208102",Keys.ENTER);
