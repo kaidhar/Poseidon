@@ -15,6 +15,7 @@ import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.jdom2.JDOMException;
 import org.json.JSONException;
+import org.testng.annotations.Test;
 
 
 public class OMSCalls {
@@ -60,7 +61,7 @@ public class OMSCalls {
 		int counter = 0;
 
 		while (ResponseCode != 200) {
-			Thread.sleep(10000);
+			Thread.sleep(15000);
 			ResponseCode = httpResponse.getStatusLine().getStatusCode();;
 			counter++;
 			System.out.println(counter);
@@ -94,12 +95,11 @@ public class OMSCalls {
 
 		Properties prop = new Properties();
 		InputStream input = null;
-		// String path = ClassLoader.getSystemClassLoader().getResource(".").getPath() +
-		// "Requests.properties";
-		String path = "/Users/h895458/git/Poseidon/POSEIDON/src/main/java/oms/Poseidon/Webservices/Requests.properties";
-		System.out.println(path + "\n");
+
+		input = this.getClass().getResourceAsStream("Requests.properties");
+		//System.out.println(path + "\n");
 		// input = this.getClass().getResourceAsStream(path);
-		input = new FileInputStream(path);
+		//input = new FileInputStream(path);
 		// FileInputStream("//Users//h895458//Desktop//Workspace//DataIssue//src//dataCheck//Keys.properties");
 		prop.load(input);
 		String Value = prop.getProperty(Prop);

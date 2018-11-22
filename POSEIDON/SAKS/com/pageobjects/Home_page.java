@@ -25,6 +25,7 @@ public class Home_page {
     {
         this.driver=ldriver;
     }
+    
     public void loadPropertiesFile() {
         String filepath=System.getProperty("user.dir")+"//Testdata/SAKS.properties";
         
