@@ -88,7 +88,6 @@ public class SingleLineAllTenderTypes {
 		}
 	}
 
-	@Test(priority = 1, enabled = true)
 	public String SingleLineAmex() {
 		WebDriver driver = BrowserFactory.launchBrowser("chrome", "https://www.qa.saks.com/Entry.jsp");
 		String OrderID = null;
@@ -151,7 +150,6 @@ public class SingleLineAllTenderTypes {
 		return OrderID;
 	}
 
-	@Test(priority = 2, enabled = false)
 	public void singleLineDiscover() {
 		WebDriver driver = BrowserFactory.launchBrowser("chrome", "http://qaslot5.saksdirect.com/");
 		try {
@@ -202,7 +200,7 @@ public class SingleLineAllTenderTypes {
 
 	}
 
-	@Test(priority = 3, enabled = false)
+
 	public void SingleLineMastercard() {
 		WebDriver driver = BrowserFactory.launchBrowser("chrome", "http://qaslot5.saksdirect.com/");
 		// int iFrameSize = driver.findElements(By.tagName("iframe")).size();
