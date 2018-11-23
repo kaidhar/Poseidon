@@ -9,6 +9,11 @@ import java.util.Properties;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import com.helper.Utilities;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -16,35 +21,30 @@ import org.openqa.selenium.support.How;
 
 public class SkuSearchpage {
 
-    WebDriver driver;
-    Properties prop = new Properties();
-    InputStream input = null;
+	WebDriver driver;
+	WebDriverWait wait = null;
+	WebElement ele;
+	Utilities prop = new Utilities();
 
-    public SkuSearchpage (WebDriver Qdriver)
-    {
-        this.driver=Qdriver;
-    }
-    
-    public void loadPropertiesFile() {
-         String filepath=System.getProperty("user.dir")+"//Testdata/SAKS.properties";
-         
-         try {
-             input = new FileInputStream(filepath);
-             prop.load(input);
-         } catch (IOException e) {
-             System.out.println("File not found");
-             e.printStackTrace();
-         }
-    }
+	public SkuSearchpage(WebDriver ldriver) {
+
+		wait = new WebDriverWait(ldriver, 20);
+		this.driver = ldriver;
+
+	}
     
     
-    WebElement Search = driver.findElement(By.name(prop.getProperty("Searchsku")));
-    public void SearchSku()
-    {
-        Search.sendKeys("0467558208102",Keys.ENTER);
-    }
+    public void SearchSku() {
+		try {
+			ele = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(prop.getProperty("Searchsku"))));
+			ele.sendKeys("0467558208102",Keys.ENTER);
+
+		} catch (Exception e) {
+			System.out.println("Unable to enter and search webID");
+			e.printStackTrace();
+		}
+
+	}
 
 
 }
-
-

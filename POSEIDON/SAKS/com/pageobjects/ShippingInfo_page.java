@@ -1,135 +1,141 @@
 package com.pageobjects;
+
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+
+import java.io.IOException;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
-
+import com.helper.Utilities;
 
 public class ShippingInfo_page {
 
+	WebDriver driver;
+	WebDriverWait wait = null;
+	WebElement ele;
+	Utilities prop = new Utilities();
 
-    WebDriver driver;
+	public ShippingInfo_page(WebDriver ldriver) {
+		this.driver = ldriver;
+	}
 
-    public ShippingInfo_page(WebDriver ldriver) {
-        this.driver = ldriver;
-    }
+	public void firstname() {
+		try {
 
+			ele = driver.findElement(By.id(prop.getProperty("firstname")));
+			ele.sendKeys("sanjay");
 
+		} catch (Exception e) {
+			System.out.println("first name not entered");
+			e.printStackTrace();
+		}
+	}
 
-    @FindBy(how = How.ID, using = "given-name")
-    WebElement Firsrtname;
+	public void lastname() {
 
-    @FindBy(how = How.ID, using = "family-name")
-    WebElement Lastname;
+		try {
 
-    @FindBy(how = How.ID, using = "address")
-    WebElement Address;
+			ele = driver.findElement(By.id(prop.getProperty("lastname")));
+			ele.sendKeys("s");
 
-    @FindBy(how = How.ID, using = "address-level2")
-    WebElement City;
+		} catch (Exception e) {
+			System.out.println("last name not entered");
+			e.printStackTrace();
+		}
+	}
 
-    @FindBy(how = How.NAME, using = "state")
-    WebElement State;
+	public void address() {
+		try {
 
-    @FindBy(how = How.ID , using = "address-form-email")
-    WebElement Email;
+			ele = driver.findElement(By.id(prop.getProperty("address")));
+			ele.sendKeys("1000 w 78 st");
 
-    @FindBy(how = How.ID,using = "tel")
-    WebElement Phone;
+		} catch (Exception e) {
+			System.out.println("address not entered");
+			e.printStackTrace();
+		}
+	}
 
-    @FindBy(how = How.ID,using = "postal-code")
-    WebElement Zipcode;
+	public void city() {
+		try {
 
-    @FindBy(how = How.XPATH,using = ".//*[@class='hbc-button hbc-button--primary address-form__submit-button']")
-    WebElement ConfirmAdress;
+			ele = driver.findElement(By.id(prop.getProperty("city")));
+			ele.sendKeys("new york");
 
+		} catch (Exception e) {
+			System.out.println("city not entered");
+			e.printStackTrace();
+		}
+	}
 
+	public void selectstate() {
+		ele = driver.findElement(By.name("state"));
+		Select drop = new Select(ele);
+		try {
+			drop.selectByValue(prop.getProperty("stateSelect"));
+		} catch (IOException e) {
+			System.out.println("state not selected");
+			e.printStackTrace();
+		}
 
+	}
 
-    public void firstname()
-    {
-        Firsrtname.sendKeys("Sanjay");
-    }
+	public void email() {
+		try {
 
-    public void lastname()
-    {
+			ele = driver.findElement(By.id(prop.getProperty("email")));
+			ele.sendKeys("accept@fraudtest.com");
 
-        Actions actions = new Actions(driver);
-        actions.moveToElement(Lastname);
-        actions.click();
-        actions.sendKeys("SOME DATA");
-        actions.build().perform();
-        //Lastname.sendKeys("S");
-    }
+		} catch (Exception e) {
+			System.out.println("email not entered");
+			e.printStackTrace();
+		}
+	}
 
+	public void phone() {
+		try {
 
-    public void address ()
-    {
-        Actions actions = new Actions(driver);
-        actions.moveToElement(Address);
-        actions.click();
-        actions.sendKeys("410 5TH AVENEU");
-        actions.build().perform();
-    }
+			ele = driver.findElement(By.id(prop.getProperty("phone")));
+			ele.sendKeys("9845718271");
 
-    public void city()
-    {
-        Actions actions = new Actions(driver);
-        actions.moveToElement(City);
-        actions.click();
-        actions.sendKeys("NEW YORK");
-        actions.build().perform();
-    }
+		} catch (Exception e) {
+			System.out.println("phone no not entered");
+			e.printStackTrace();
+		}
+	}
 
+	public void Postal() {
+		try {
 
-    public void selectstate() {
-        Select drop = new Select(State);
-        drop.selectByValue("NY");
+			ele = driver.findElement(By.id(prop.getProperty("zipcode")));
+			ele.sendKeys(prop.getProperty("postalcode"));
 
-    }
+		} catch (Exception e) {
+			System.out.println("phone no not entered");
+			e.printStackTrace();
+		}
+	}
 
-    public void email()
-    {
-        Actions actions = new Actions(driver);
-        actions.moveToElement(Email);
-        actions.click();
-        actions.sendKeys("accept@fraudtest.com");
-        actions.build().perform();
+	public void confirmAdd() {
 
-    }
+		try {
 
-    public void phone()
-    {
-        Actions actions = new Actions(driver);
-        actions.moveToElement(Phone);
-        actions.click();
-        actions.sendKeys("939473847383");
-        actions.build().perform();
-    }
+			ele = driver.findElement(By.xpath(prop.getProperty("confrmaddress")));
+			ele.click();
 
-    public void Postal()
-    {
-        Actions actions = new Actions(driver);
-        actions.moveToElement(Zipcode);
-        actions.click();
-        actions.sendKeys("10003");
-        actions.build().perform();
-    }
+		} catch (Exception e) {
+			System.out.println("not able to proceed");
+			e.printStackTrace();
+		}
 
-    public void confirmAdd()
-    {
-
-
-        ConfirmAdress.click();
-
-
-
-    }
+	}
 }

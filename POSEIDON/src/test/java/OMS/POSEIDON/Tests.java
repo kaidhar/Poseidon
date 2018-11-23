@@ -26,7 +26,9 @@ public class Tests {
 		//String OrderID="073069815";
 
 		String Banner = "SAKS";
+
 		Thread.sleep(900*1000);
+
 		OMSCalls Calls = new OMSCalls();
 		int ResponseCode = Calls.getOrderDetails(OrderID, Banner);
 		System.out.println(ResponseCode);
