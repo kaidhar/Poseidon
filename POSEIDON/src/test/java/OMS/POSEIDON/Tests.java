@@ -42,7 +42,7 @@ public class Tests {
 		
 		switch(Status.get(1)){
 		
-		case "Released": Calls.ShipSLSQOrder(OrderID, Banner,Status.get(2));
+		case "Released": Calls.ShipSLSQOrder(OrderID, Banner,Status.get(2),Status.get(3),Status.get(4));
 		break;
 		
 		//case "Ready for Backroom Pick": Calls.callWebSOM();
