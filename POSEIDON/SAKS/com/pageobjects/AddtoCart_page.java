@@ -1,68 +1,92 @@
 package com.pageobjects;
+
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import com.helper.Utilities;
+
 import org.openqa.selenium.support.How;
 
 public class AddtoCart_page {
 
-    WebDriver driver;
+	WebDriver driver;
+	WebDriverWait wait = null;
+	WebElement ele;
+	Utilities prop = new Utilities();
 
+	public AddtoCart_page(WebDriver ldriver) {
+		this.driver = ldriver;
+	}
 
-    public AddtoCart_page(WebDriver ldriver)
-    {
-        this.driver=ldriver;
-    }
+	public void selectColor(String color) throws Exception {
+		Thread.sleep(2000);
+		WebElement selectColor = driver.findElement(By.xpath("//span[contains(text(),'" + color + "')]"));
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		;
+		js.executeScript("arguments[0].click();", selectColor);
 
+	}
 
-    @FindBy(how = How.XPATH,using = "//*[@class='hbc-button hbc-button--full hbc-button--primary']")
-    WebElement Addtocart;
+	public void Addtocart() {
+		try {
 
-    @FindBy(how = How.XPATH,using = "//*[@class=\"hbc-button hbc-button--block hbc-button--primary\"]")
-    WebElement Checkout;
+			ele = driver.findElement(By.xpath(prop.getProperty("addtocart")));
+			ele.click();
 
-    @FindBy(how = How.XPATH,using = ".//*[@href='/checkout/checkout.jsp']")
-    WebElement Checkout2;
+		} catch (Exception e) {
+			System.out.println("Unable to add to cart");
+			e.printStackTrace();
+		}
+	}
 
-    @FindBy (how = How.XPATH , using = ".//*[@class='hbc-button hbc-button--secondary hbc-login__guest-checkout-btn']")
-    WebElement SelectUser;
+	public void Checkout() {
+		try {
 
-    //For multiaunatity
-    @FindBy(how = How.XPATH,using = "//*[@class=\"spinbox__increment\"]")
-    WebElement Increment;
+			ele = driver.findElement(By.xpath(prop.getProperty("checkout")));
+			ele.click();
 
-    public void selectColor(String color) throws Exception {
-        Thread.sleep(2000);
-        WebElement selectColor=driver.findElement(By.xpath("//span[contains(text(),'"+color+"')]"));
-        JavascriptExecutor js=(JavascriptExecutor) driver;;
-        js.executeScript("arguments[0].click();", selectColor);
+		} catch (Exception e) {
+			System.out.println("Unable to proceed with checkout");
+			e.printStackTrace();
+		}
+	}
 
+	public void Checkout2() {
+		try {
 
-    }
+			ele = driver.findElement(By.xpath(prop.getProperty("checkout2")));
+			ele.click();
 
+		} catch (Exception e) {
+			System.out.println("Unable to proceed with checkout");
+			e.printStackTrace();
+		}
+	}
 
-    public void Addtocart()
-    {
-        Addtocart.click();
-    }
+	public void select_user() {
+		try {
 
-    public void Checkout()
-    {
-        Checkout.click();
-    }
+			ele = driver.findElement(By.xpath(prop.getProperty("selectuser")));
+			ele.click();
 
-    public void Checkout2()
-    {
-        Checkout2.click();
-    }
+		} catch (Exception e) {
+			System.out.println("unable to select user");
+			e.printStackTrace();
+		}
+	}
 
-    public void select_user()
-    {
-        SelectUser.click();
-    }
-    public void Increment()
-    {
-        Increment.click();
-    }
+	public void Increment() {
+		try {
+
+			ele = driver.findElement(By.xpath(prop.getProperty("Multiquantity")));
+			ele.click();
+
+		} catch (Exception e) {
+			System.out.println("Unable add multiple item");
+			e.printStackTrace();
+		}
+	}
 }
