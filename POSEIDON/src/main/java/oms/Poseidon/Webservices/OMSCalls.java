@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Properties;
 import java.util.TreeMap;
@@ -23,7 +24,6 @@ import org.jdom2.Element;
 import org.jdom2.JDOMException;
 import org.jdom2.input.SAXBuilder;
 import org.json.JSONException;
-
 
 import com.google.common.base.Supplier;
 import com.google.common.collect.ListMultimap;
@@ -119,18 +119,18 @@ public class OMSCalls {
 
 		String body = client.execute(httpPost, handler);
 
-		
-		Multimap<String, String> AttributeValue = XMLConvertor(body);
-	
-		
+		HashMap<String, String> AttributeValue = XMLConvertor(body);
+
 		ArrayList<String> Status = new ArrayList<String>();
-		
+
 		Status.add(AttributeValue.get("Status").toString());
 		Status.add(AttributeValue.get("OrderedQty").toString());
-		
-		return Status;
-		
 
+		Status.add(AttributeValue.get("OrderReleaseKey").toString());
+
+		Status.add(AttributeValue.get("ShipNode").toString());
+
+		return Status;
 
 	}
 
@@ -166,7 +166,7 @@ public class OMSCalls {
 	public void resolveBuyersRemorse(String orderID, String banner) throws IOException {
 		String requestTemplate = getRequestProperty("BuyersRemorse");
 		String environment = getProperty("Env");
-		String url = getProperty("WS" + environment);
+		String url = getProperty("WSBRH" + environment);
 
 		String finalrequest = requestTemplate;
 
@@ -200,7 +200,7 @@ public class OMSCalls {
 	public void runScheduleAgent(String orderID, String banner) throws IOException {
 		String requestTemplate = getRequestProperty("ScheduleAgent");
 		String environment = getProperty("Env");
-		String url = getProperty("WS" + environment);
+		String url = getProperty("WSSchedule" + environment);
 		String finalrequest = requestTemplate;
 
 		String name = getProperty("UserCredentials");
@@ -232,7 +232,7 @@ public class OMSCalls {
 	public void runReleaseAgent(String orderID, String banner) throws IOException {
 		String requestTemplate = getRequestProperty("ReleaseAgent");
 		String environment = getProperty("Env");
-		String url = getProperty("WS" + environment);
+		String url = getProperty("WSRelease" + environment);
 		String finalrequest = requestTemplate;
 
 		String name = getProperty("UserCredentials");
@@ -260,9 +260,8 @@ public class OMSCalls {
 		// TODO Auto-generated method stub
 
 	}
-	
-	public Multimap<String, String> XMLConvertor(String body)
-			throws JSONException, IOException, JDOMException {
+
+	public HashMap<String, String> XMLConvertor(String body) throws JSONException, IOException, JDOMException {
 
 		SAXBuilder saxBuilder = new SAXBuilder();
 
@@ -274,16 +273,16 @@ public class OMSCalls {
 		List<Element> Values = classElement.getChildren();
 		List<Attribute> ValueNodes = classElement.getAttributes();
 
-		// HashMap<String, String> AttributesValues = new HashMap<String, String>();
+	 HashMap<String, String> AttributesValues = new HashMap<String, String>();
 
 		// Multimap<String, String> AttributesValues = ArrayListMultimap.create();
 
-		ListMultimap<String, String> AttributesValues = Multimaps
-				.newListMultimap(new TreeMap<String, Collection<String>>(), new Supplier<List<String>>() {
-					public List<String> get() {
-						return Lists.newArrayList();
-					}
-				});
+//		ListMultimap<String, String> AttributesValues = Multimaps
+//				.newListMultimap(new TreeMap<String, Collection<String>>(), new Supplier<List<String>>() {
+//					public List<String> get() {
+//						return Lists.newArrayList();
+//					}
+//				});
 
 		for (int temp = 0; temp < Values.size(); temp++) {
 			Element Value = Values.get(temp);
@@ -345,48 +344,45 @@ public class OMSCalls {
 
 	}
 
-	public void ShipSLSQOrder(String orderID, String banner,String Qty) throws IOException {
-		
-		
-			String requestTemplate = getRequestProperty("ShippingAgent");
-			String requestTemplate1 = requestTemplate.replaceAll("&orderIDValue", orderID);
-			String requestTemplate2 = requestTemplate1.replaceAll("&banner", banner);
-			String requestTemplate3 = requestTemplate2.replaceAll("&OrderedQty", Qty);
-			String environment = getProperty("Env");
-			String url = getProperty("WS" + environment);
-			
-			
-			
-			String finalrequest = requestTemplate3;
+	public void ShipSLSQOrder(String orderID, String banner, String Qty, String ReleaseKey, String ItemID)
+			throws IOException {
 
-			String name = getProperty("UserCredentials");
-			String password = getProperty("PWDCredentials");
-			String authString = name + ":" + password;
-			byte[] authEncBytes = Base64.encodeBase64(authString.getBytes());
-			String authStringEnc = new String(authEncBytes);
+		String requestTemplate = getRequestProperty("ShippingAgent");
+		String requestTemplate1 = requestTemplate.replaceAll("&orderIDValue", orderID);
+		String requestTemplate2 = requestTemplate1.replaceAll("&banner", banner);
+		String requestTemplate3 = requestTemplate2.replaceAll("&OrderedQty", Qty);
+		String requestTemplate4 = requestTemplate3.replaceAll("&ReleaseKey", ReleaseKey);
+		String requestTemplate5 = requestTemplate4.replaceAll("&ItemID", ItemID);
 
-			CloseableHttpClient client = HttpClients.createDefault();
-			HttpPost httpPost = new HttpPost(url);
+		String environment = getProperty("Env");
+		String url = getProperty("WSShip" + environment);
 
-			StringEntity entity = new StringEntity(finalrequest);
-			httpPost.setEntity(entity);
-			httpPost.setHeader("Accept", "application/xml");
-			httpPost.setHeader("Content-type", "application/xml");
-			httpPost.setHeader("Authorization", "Basic  " + authStringEnc);
+		String finalrequest = requestTemplate5;
 
-			ResponseHandler<String> handler = new BasicResponseHandler();
+		String name = getProperty("UserCredentials");
+		String password = getProperty("PWDCredentials");
+		String authString = name + ":" + password;
+		byte[] authEncBytes = Base64.encodeBase64(authString.getBytes());
+		String authStringEnc = new String(authEncBytes);
 
-			// String body = client.execute(httpPost, handler);
-			HttpResponse httpResponse = null;
-			httpResponse = client.execute(httpPost);
-			httpResponse.getEntity().getContent().close();
-			int ResponseCode = httpResponse.getStatusLine().getStatusCode();
-			// TODO Auto-generated method stub
+		CloseableHttpClient client = HttpClients.createDefault();
+		HttpPost httpPost = new HttpPost(url);
 
-		
+		StringEntity entity = new StringEntity(finalrequest);
+		httpPost.setEntity(entity);
+		httpPost.setHeader("Accept", "application/xml");
+		httpPost.setHeader("Content-type", "application/xml");
+		httpPost.setHeader("Authorization", "Basic  " + authStringEnc);
 
-		
-		
+		ResponseHandler<String> handler = new BasicResponseHandler();
+
+		// String body = client.execute(httpPost, handler);
+		HttpResponse httpResponse = null;
+		httpResponse = client.execute(httpPost);
+		httpResponse.getEntity().getContent().close();
+		int ResponseCode = httpResponse.getStatusLine().getStatusCode();
+		// TODO Auto-generated method stub
+
 	}
 
 }
