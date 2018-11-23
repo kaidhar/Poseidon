@@ -14,15 +14,19 @@ import oms.Poseidon.Webservices.OMSCalls;
 
 public class Tests {
 
+	
+	
 	@Test
 	public void TestsForSAKS() throws JSONException, IOException, JDOMException, InterruptedException {
 
 		SingleLineAllTenderTypes SQATT = new SingleLineAllTenderTypes();
 
 		String OrderID = SQATT.SingleLineAmex();
+		
+		//String OrderID="073069815";
 
 		String Banner = "SAKS";
-		Thread.sleep(3000000);
+		Thread.sleep(900*1000);
 		OMSCalls Calls = new OMSCalls();
 		int ResponseCode = Calls.getOrderDetails(OrderID, Banner);
 		System.out.println(ResponseCode);
@@ -40,9 +44,14 @@ public class Tests {
 		
 		ArrayList<String> Status = Calls.getOrderStatus(OrderID, Banner);
 		
-		switch(Status.get(1)){
+		switch(Status.get(0)){
 		
-		case "Released": Calls.ShipSLSQOrder(OrderID, Banner,Status.get(2),Status.get(3),Status.get(4));
+		case "Released": int ResponseCodeforShip= Calls.ShipSLSQOrder(OrderID, Banner, Status.get(1),Status.get(2),Status.get(3),Status.get(4));
+		if(ResponseCodeforShip==200) {System.out.println("Shipment Confirmed");}
+		else
+		{
+			System.out.println("Error in Shipment");
+		}
 		break;
 		
 		//case "Ready for Backroom Pick": Calls.callWebSOM();
@@ -51,12 +60,7 @@ public class Tests {
 		
 		}
 		
-		if(Status.equals("Released"))
-		{
-			
-			
-			
-		}
+		
 
 		
 		

@@ -41,7 +41,7 @@ public class OMSCalls {
 		String requestTemplate1 = requestTemplate.replaceAll("&orderIDValue", orderIDValue);
 		String requestTemplate2 = requestTemplate1.replaceAll("&banner", banner);
 		String environment = getProperty("Env");
-		String url = getProperty("WS" + environment);
+		String url = getProperty("WSGOD" + environment);
 
 		String finalrequest = requestTemplate2;
 
@@ -96,7 +96,7 @@ public class OMSCalls {
 		String requestTemplate1 = requestTemplate.replaceAll("&orderIDValue", orderIDValue);
 		String requestTemplate2 = requestTemplate1.replaceAll("&banner", banner);
 		String environment = getProperty("Env");
-		String url = getProperty("WS" + environment);
+		String url = getProperty("WSGOD" + environment);
 
 		String finalrequest = requestTemplate2;
 
@@ -123,12 +123,15 @@ public class OMSCalls {
 
 		ArrayList<String> Status = new ArrayList<String>();
 
-		Status.add(AttributeValue.get("Status").toString());
+		Status.add(AttributeValue.get("MaxLineStatusDesc").toString());
 		Status.add(AttributeValue.get("OrderedQty").toString());
 
 		Status.add(AttributeValue.get("OrderReleaseKey").toString());
+		Status.add(AttributeValue.get("ItemID").toString());
 
 		Status.add(AttributeValue.get("ShipNode").toString());
+		
+
 
 		return Status;
 
@@ -223,7 +226,6 @@ public class OMSCalls {
 		// String body = client.execute(httpPost, handler);
 		HttpResponse httpResponse = null;
 		httpResponse = client.execute(httpPost);
-		httpResponse.getEntity().getContent().close();
 		int ResponseCode = httpResponse.getStatusLine().getStatusCode();
 		// TODO Auto-generated method stub
 
@@ -255,7 +257,7 @@ public class OMSCalls {
 		// String body = client.execute(httpPost, handler);
 		HttpResponse httpResponse = null;
 		httpResponse = client.execute(httpPost);
-		httpResponse.getEntity().getContent().close();
+		//httpResponse.getEntity().getContent().close();
 		int ResponseCode = httpResponse.getStatusLine().getStatusCode();
 		// TODO Auto-generated method stub
 
@@ -344,7 +346,7 @@ public class OMSCalls {
 
 	}
 
-	public void ShipSLSQOrder(String orderID, String banner, String Qty, String ReleaseKey, String ItemID)
+	public int ShipSLSQOrder(String orderID, String banner, String Qty, String ReleaseKey, String ItemID,String ShipNode)
 			throws IOException {
 
 		String requestTemplate = getRequestProperty("ShippingAgent");
@@ -353,11 +355,12 @@ public class OMSCalls {
 		String requestTemplate3 = requestTemplate2.replaceAll("&OrderedQty", Qty);
 		String requestTemplate4 = requestTemplate3.replaceAll("&ReleaseKey", ReleaseKey);
 		String requestTemplate5 = requestTemplate4.replaceAll("&ItemID", ItemID);
+		String requestTemplate6 = requestTemplate5.replaceAll("&ShipNode", ShipNode);
 
 		String environment = getProperty("Env");
 		String url = getProperty("WSShip" + environment);
 
-		String finalrequest = requestTemplate5;
+		String finalrequest = requestTemplate6;
 
 		String name = getProperty("UserCredentials");
 		String password = getProperty("PWDCredentials");
@@ -379,8 +382,9 @@ public class OMSCalls {
 		// String body = client.execute(httpPost, handler);
 		HttpResponse httpResponse = null;
 		httpResponse = client.execute(httpPost);
-		httpResponse.getEntity().getContent().close();
 		int ResponseCode = httpResponse.getStatusLine().getStatusCode();
+		return ResponseCode;
+		
 		// TODO Auto-generated method stub
 
 	}
