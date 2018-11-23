@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Fri Nov 23 12:52:01 IST 2018</td>
+<td>Started on:</td><td>Fri Nov 23 15:53:34 IST 2018</td>
 </tr>
-<tr><td>Total time:</td><td>123 seconds (123472 ms)</td>
+<tr><td>Total time:</td><td>1297 seconds (1297445 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -76,15 +76,13 @@ function toggleAllBoxes() {
 </tr>
 <tr>
 <td title='OMS.POSEIDON.Tests.TestsForSAKS()'><b>TestsForSAKS</b><br>Test class: OMS.POSEIDON.Tests</td>
-<td><div><pre>java.lang.AssertionError: expected [false] but found [true]
-	at org.testng.Assert.fail(Assert.java:96)
-	at org.testng.Assert.failNotEquals(Assert.java:776)
-	at org.testng.Assert.assertEqualsImpl(Assert.java:137)
-	at org.testng.Assert.assertEquals(Assert.java:118)
-	at org.testng.Assert.assertEquals(Assert.java:568)
-	at org.testng.Assert.assertEquals(Assert.java:578)
-	at com.BaseClass.SingleLineAllTenderTypes.SingleLineAmex(SingleLineAllTenderTypes.java:144)
-	at OMS.POSEIDON.Tests.TestsForSAKS(Tests.java:22)
+<td><div><pre>java.lang.NullPointerException
+	at java.net.URI$Parser.parse(URI.java:3042)
+	at java.net.URI.&lt;init&gt;(URI.java:588)
+	at java.net.URI.create(URI.java:850)
+	at org.apache.http.client.methods.HttpPost.&lt;init&gt;(HttpPost.java:76)
+	at oms.Poseidon.Webservices.OMSCalls.getOrderDetails(OMSCalls.java:55)
+	at OMS.POSEIDON.Tests.TestsForSAKS(Tests.java:27)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -110,16 +108,14 @@ function toggleAllBoxes() {
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div><a href='#' onClick='toggleBox("stack-trace1585841343", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1585841343'><pre>java.lang.AssertionError: expected [false] but found [true]
-	at org.testng.Assert.fail(Assert.java:96)
-	at org.testng.Assert.failNotEquals(Assert.java:776)
-	at org.testng.Assert.assertEqualsImpl(Assert.java:137)
-	at org.testng.Assert.assertEquals(Assert.java:118)
-	at org.testng.Assert.assertEquals(Assert.java:568)
-	at org.testng.Assert.assertEquals(Assert.java:578)
-	at com.BaseClass.SingleLineAllTenderTypes.SingleLineAmex(SingleLineAllTenderTypes.java:144)
-	at OMS.POSEIDON.Tests.TestsForSAKS(Tests.java:22)
+</pre></div><a href='#' onClick='toggleBox("stack-trace688113407", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace688113407'><pre>java.lang.NullPointerException
+	at java.net.URI$Parser.parse(URI.java:3042)
+	at java.net.URI.&lt;init&gt;(URI.java:588)
+	at java.net.URI.create(URI.java:850)
+	at org.apache.http.client.methods.HttpPost.&lt;init&gt;(HttpPost.java:76)
+	at oms.Poseidon.Webservices.OMSCalls.getOrderDetails(OMSCalls.java:55)
+	at OMS.POSEIDON.Tests.TestsForSAKS(Tests.java:27)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -146,7 +142,7 @@ function toggleAllBoxes() {
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 </pre></div></td>
-<td>123</td>
+<td>1297</td>
 <td>OMS.POSEIDON.Tests@7d9d1a19</td></tr>
 </table><p>
 </body>

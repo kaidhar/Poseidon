@@ -128,15 +128,13 @@
                   <a name="TestsForSAKS">
                   </a> <!-- TestsForSAKS -->
                   <span class="method-name">TestsForSAKS</span>
-                  <div class="stack-trace">java.lang.AssertionError: expected [false] but found [true]
-	at org.testng.Assert.fail(Assert.java:96)
-	at org.testng.Assert.failNotEquals(Assert.java:776)
-	at org.testng.Assert.assertEqualsImpl(Assert.java:137)
-	at org.testng.Assert.assertEquals(Assert.java:118)
-	at org.testng.Assert.assertEquals(Assert.java:568)
-	at org.testng.Assert.assertEquals(Assert.java:578)
-	at com.BaseClass.SingleLineAllTenderTypes.SingleLineAmex(SingleLineAllTenderTypes.java:144)
-	at OMS.POSEIDON.Tests.TestsForSAKS(Tests.java:22)
+                  <div class="stack-trace">java.lang.NullPointerException
+	at java.net.URI$Parser.parse(URI.java:3042)
+	at java.net.URI.&lt;init&gt;(URI.java:588)
+	at java.net.URI.create(URI.java:850)
+	at org.apache.http.client.methods.HttpPost.&lt;init&gt;(HttpPost.java:76)
+	at oms.Poseidon.Webservices.OMSCalls.getOrderDetails(OMSCalls.java:55)
+	at OMS.POSEIDON.Tests.TestsForSAKS(Tests.java:27)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -171,7 +169,7 @@
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">/private/var/folders/qb/xrnzx8792y3736wctwvf1r24xgq2qz/T/testng-eclipse-1783775591/testng-customsuite.xml</span>
+            <span class="header-content">/private/var/folders/qb/xrnzx8792y3736wctwvf1r24xgq2qz/T/testng-eclipse-866730599/testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -224,12 +222,12 @@ data.addRows(1);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'TestsForSAKS')
 data.setCell(0, 2, 'OMS.POSEIDON.Tests')
-data.setCell(0, 3, 123449);
+data.setCell(0, 3, 1297425);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 2 minutes</span>
+              <span class="suite-total-time">Total running time: 21 minutes</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
