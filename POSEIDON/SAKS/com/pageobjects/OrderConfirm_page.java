@@ -23,7 +23,7 @@ public class OrderConfirm_page {
 		Thread.sleep(2000);
 		String OrderNo="";
 		try {
-		 ele = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(prop.getProperty("ConfirmOrder"))));
+		 ele = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(prop.getProperty("retriveorder"))));
 		 OrderNo=ele.getText();
 		 
 		}catch (Exception e) {
@@ -45,7 +45,7 @@ public class OrderConfirm_page {
 		Thread.sleep(2000);
 		String OrderNo="";
 		try {
-		 ele = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(prop.getProperty("ConfirmOrder"))));
+		 ele = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(prop.getProperty("retriveorder"))));
 		 OrderNo=ele.getText();
 		 
 		}catch (Exception e) {
@@ -58,7 +58,7 @@ public class OrderConfirm_page {
 
 	public void PlaceOrder() {
 		try {
-			ele = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(prop.getProperty("ConfirmOrder"))));
+			ele = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(prop.getProperty("placeorder"))));
 			ele.click();
 
 		} catch (Exception e) {

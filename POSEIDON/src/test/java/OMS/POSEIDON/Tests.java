@@ -22,7 +22,7 @@ public class Tests {
 		String OrderID = SQATT.SingleLineAmex();
 
 		String Banner = "SAKS";
-		Thread.sleep(3000000);
+		Thread.sleep(1200000);
 		OMSCalls Calls = new OMSCalls();
 		int ResponseCode = Calls.getOrderDetails(OrderID, Banner);
 		System.out.println(ResponseCode);

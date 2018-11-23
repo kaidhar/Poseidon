@@ -129,7 +129,7 @@ public class ShippingInfo_page {
 
 		try {
 
-			ele = driver.findElement(By.id(prop.getProperty("confrmaddress")));
+			ele = driver.findElement(By.xpath(prop.getProperty("confrmaddress")));
 			ele.click();
 
 		} catch (Exception e) {
