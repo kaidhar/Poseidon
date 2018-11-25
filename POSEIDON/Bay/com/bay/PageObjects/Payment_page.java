@@ -1,14 +1,16 @@
-package com.pageobjects;
+package com.bay.PageObjects;
+
+import java.io.IOException;
 
 import org.openqa.selenium.By;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import com.helper.Utilities;
+import com.bay.helper.Utilities;
 
 public class Payment_page {
 
@@ -24,16 +26,13 @@ public class Payment_page {
 
 
 
-	public void SelectType() {
-		Actions actions = new Actions(driver);
+	public void selectType() throws IOException {
+		ele = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(prop.getProperty("paymentType"))));
+		Select drop = new Select(ele);
 		try {
-			ele = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(prop.getProperty("Selecttype"))));
-			actions.moveToElement(ele);
-			actions.click();
-			actions.build().perform();
-
-		} catch (Exception e) {
-			System.out.println("Unable to click selectType");
+			drop.selectByValue(prop.getProperty("CardType"));
+		} catch (IOException e) {
+			System.out.println("state not selected");
 			e.printStackTrace();
 		}
 
@@ -42,7 +41,7 @@ public class Payment_page {
 	public WebElement cardnumber(String cardType) {
 		
 		try {
-			ele = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id(prop.getProperty("CCnumber"))));
+			ele = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(prop.getProperty("CCnumber"))));
 			
 			if (cardType.equalsIgnoreCase("VISA")) {
 				ele.click();
@@ -74,7 +73,7 @@ public class Payment_page {
 		Actions actions = new Actions(driver);
 
 		try {
-			ele = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id(prop.getProperty("Ccname"))));
+			ele = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(prop.getProperty("Ccname"))));
 			actions.moveToElement(ele);
 			actions.click();
 			actions.sendKeys(prop.getProperty("CardHolderName"));
@@ -87,46 +86,55 @@ public class Payment_page {
 
 	}
 
-	public void CardYear() {
+	public void CardMonth() throws IOException
+	{
+	ele = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(prop.getProperty("CcMonth"))));
+	Select drop = new Select(ele);
+	try {
+		drop.selectByValue(prop.getProperty("month"));
+	} catch (IOException e) {
+		System.out.println("state not selected");
+		e.printStackTrace();
+	}
 
+}
+
+	public void CardYear() throws IOException
+	{
+	ele = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(prop.getProperty("Ccyear"))));
+	Select drop = new Select(ele);
+	try {
+		drop.selectByValue(prop.getProperty("year"));
+	} catch (IOException e) {
+		System.out.println("state not selected");
+		e.printStackTrace();
+	}
+
+}
+	
+	public void Cardcvv() {
 		Actions actions = new Actions(driver);
 
 		try {
-			ele = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id(prop.getProperty("CcMonth"))));
+			ele = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(prop.getProperty("cvv"))));
 			actions.moveToElement(ele);
 			actions.click();
-			actions.sendKeys(prop.getProperty("DateandYear"));
+			actions.sendKeys(prop.getProperty("Cvvnumber"));
 			actions.build().perform();
 
 		} catch (Exception e) {
-			System.out.println("Unable to enter the Date and Year");
-			e.printStackTrace();
-		}
-
-	}
-
-	public void CardCvv() {
-		Actions actions = new Actions(driver);
-		
-		try {
-			ele = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id(prop.getProperty("CVV"))));
-			actions.moveToElement(ele);
-			actions.click();
-			actions.sendKeys(prop.getProperty("CVVNumber"));
-			actions.build().perform();
-
-		} catch (Exception e) {
-			System.out.println("Unable to enter Card CVV");
+			System.out.println("Unable to enter name of the card holder");
 			e.printStackTrace();
 		}
 	}
+
 	
 	
 	public void confirmPayment() {
 		
 		
 		try {
-			ele = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(prop.getProperty("CompletePay"))));
+			ele = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(prop.getProperty("Completepay"))));
 			ele.click();
 			
 

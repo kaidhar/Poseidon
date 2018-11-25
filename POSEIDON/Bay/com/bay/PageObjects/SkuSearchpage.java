@@ -1,4 +1,4 @@
-package com.pageobjects;
+package com.bay.PageObjects;
 import org.openqa.selenium.Keys;
 
 
@@ -14,7 +14,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import com.helper.Utilities;
+import com.bay.helper.*;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -34,12 +34,12 @@ public class SkuSearchpage {
 		this.driver = ldriver;
 
 	}
-    
-    
+	
+	
     public void SearchSku() {
 		try {
 			ele = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(prop.getProperty("Searchsku"))));
-			ele.sendKeys("0467558208102",Keys.ENTER);
+			ele.sendKeys("0600001001133",Keys.ENTER);
 
 		} catch (Exception e) {
 			System.out.println("Unable to enter and search webID");

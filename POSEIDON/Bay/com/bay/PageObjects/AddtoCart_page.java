@@ -1,15 +1,13 @@
-package com.pageobjects;
+package com.bay.PageObjects;
 
 import org.openqa.selenium.*;
-
-
 import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import com.helper.Utilities;
+import com.bay.helper.Utilities;
 
 import org.openqa.selenium.support.How;
 
@@ -27,13 +25,19 @@ public class AddtoCart_page {
 
 	public void selectColor(String color) throws Exception {
 		Thread.sleep(2000);
-		WebElement selectColor = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[contains(text(),'" + color + "')]")));
+		WebElement selectColor = driver.findElement(By.xpath("//span[contains(text(),'" + color + "')]"));
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		;
 		js.executeScript("arguments[0].click();", selectColor);
 
 	}
 	
+	public void SelectSize(String size) throws Exception {
+		WebElement selectsize = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[contains(text(),'" + size + "')]")));
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		;
+		js.executeScript("arguments[0].click();", selectsize);
+	}
 
 	public void Addtocart() {
 		try {
