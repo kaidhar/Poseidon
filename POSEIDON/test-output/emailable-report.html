@@ -9,18 +9,19 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="7">Default suite</th></tr>
-<tr><td><a href="#t0">Default test</a></td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">90,144</td><td></td><td></td></tr>
+<tr><td><a href="#t0">Default test</a></td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">1,284,217</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Default suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Default test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">OMS.POSEIDON.Baytest</td><td><a href="#m0">TestsForSAKS</a></td><td rowspan="1">1543143020398</td><td rowspan="1">90123</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Default suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Default test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">OMS.POSEIDON.Tests</td><td><a href="#m0">TestsForSAKSMQ</a></td><td rowspan="1">1543144310519</td><td rowspan="1">1284194</td></tr></tbody>
 </table>
-<h2>Default test</h2><h3 id="m0">OMS.POSEIDON.Baytest#TestsForSAKS</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: expected [0] but found [true]
-	at org.testng.Assert.fail(Assert.java:96)
-	at org.testng.Assert.failNotEquals(Assert.java:776)
-	at org.testng.Assert.assertEqualsImpl(Assert.java:137)
-	at org.testng.Assert.assertEquals(Assert.java:118)
-	at org.testng.Assert.assertEquals(Assert.java:442)
-	at com.bay.BaseClass.SingleLineAllTenderTypes.SinglineVisa(SingleLineAllTenderTypes.java:86)
-	at OMS.POSEIDON.Baytest.TestsForSAKS(Baytest.java:26)
+<h2>Default test</h2><h3 id="m0">OMS.POSEIDON.Tests#TestsForSAKSMQ</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.apache.http.client.HttpResponseException: Bad Request
+	at org.apache.http.impl.client.AbstractResponseHandler.handleResponse(AbstractResponseHandler.java:69)
+	at org.apache.http.impl.client.BasicResponseHandler.handleResponse(BasicResponseHandler.java:65)
+	at org.apache.http.impl.client.BasicResponseHandler.handleResponse(BasicResponseHandler.java:51)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:222)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:164)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:139)
+	at oms.Poseidon.Webservices.OMSCalls.getOrderStatus(OMSCalls.java:122)
+	at OMS.POSEIDON.Tests.TestsForSAKSMQ(Tests.java:97)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
