@@ -39,7 +39,7 @@ public class SkuSearchpage {
     public void SearchSku() {
 		try {
 			ele = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(prop.getProperty("Searchsku"))));
-			ele.sendKeys("0600001001133",Keys.ENTER);
+			ele.sendKeys("0600083689226",Keys.ENTER);
 
 		} catch (Exception e) {
 			System.out.println("Unable to enter and search webID");

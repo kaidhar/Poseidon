@@ -40,15 +40,17 @@ public class SingleLineAllTenderTypes {
 	public String  SinglineVisa() throws InterruptedException {
 		this.loadPropertiesFile();
 		WebDriver driver = BrowserFactory.launchBrowser("chrome", "https://qa.thebay.com");
-		String OrderID = null;
+		String OrderID = "";
 
 		try {
 			SkuSearchpage skusearch = PageFactory.initElements(driver, SkuSearchpage.class);
 			skusearch.SearchSku();
 
 			AddtoCart_page cart = PageFactory.initElements(driver, AddtoCart_page.class);
-			cart.selectColor("Coral Bliss");
+			cart.selectColor("White");
 			cart.SelectSize("ONE SIZE");
+			cart.Increment();
+			cart.Increment();
 			cart.Addtocart();
 			cart.Checkout();
 			cart.Checkout2();
@@ -82,8 +84,12 @@ public class SingleLineAllTenderTypes {
 			OrderConfirm_page cnfrm = PageFactory.initElements(driver, OrderConfirm_page.class);
 			cnfrm.PlaceOrder();
 			Thread.sleep(2000);
-			String result = cnfrm.ReturnorderNumber();
-			Assert.assertEquals(true, result);
+			OrderID = cnfrm.ReturnorderNumber();
+			if(OrderID.equals(null));
+			{
+			System.out.println("Order Not Created");	
+			}
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

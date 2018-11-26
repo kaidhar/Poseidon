@@ -27,9 +27,9 @@ public class Baytest {
 		
 		//String OrderID="073069815";
 
-		/*String Banner = "SAKS";
+		String Banner = "BAY";
 
-		Thread.sleep(900*1000);
+		Thread.sleep(300000);
 
 		OMSCalls Calls = new OMSCalls();
 		int ResponseCode = Calls.getOrderDetails(OrderID, Banner);
@@ -63,7 +63,7 @@ public class Baytest {
 		
 		
 		}
-		*/
+		
 		
 
 		
