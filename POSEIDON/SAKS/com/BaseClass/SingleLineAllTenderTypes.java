@@ -2,6 +2,8 @@ package com.BaseClass;
 
 import com.helper.BrowserFactory;
 
+import com.helper.*;
+
 import com.pageobjects.*;
 
 import java.io.FileInputStream;
@@ -50,6 +52,7 @@ public class SingleLineAllTenderTypes {
 			skusearch.SearchSku();
 
 			AddtoCart_page cart = PageFactory.initElements(driver, AddtoCart_page.class);
+			cart.selectColor("");
 			cart.Addtocart();
 			cart.Checkout();
 			Thread.sleep(3000);
@@ -95,7 +98,6 @@ public class SingleLineAllTenderTypes {
 
 			Home_page homePage = PageFactory.initElements(driver, Home_page.class);
 			Thread.sleep(3000);
-			;
 			homePage.Close_popup();
 			homePage.Change_country();
 			homePage.SwitchToUS();
