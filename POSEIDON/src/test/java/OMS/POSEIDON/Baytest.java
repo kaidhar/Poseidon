@@ -29,7 +29,7 @@ public class Baytest {
 
 		String Banner = "BAY";
 
-		Thread.sleep(300000);
+		Thread.sleep(600000);
 
 		OMSCalls Calls = new OMSCalls();
 		int ResponseCode = Calls.getOrderDetails(OrderID, Banner);
