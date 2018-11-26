@@ -2,12 +2,12 @@
 <testng-results skipped="0" failed="1" ignored="1" total="2" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="1284217" started-at="2018-11-25T11:11:50Z" finished-at="2018-11-25T11:33:14Z">
+  <suite name="Default suite" duration-ms="1270324" started-at="2018-11-26T06:00:02Z" finished-at="2018-11-26T06:21:13Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="1284217" started-at="2018-11-25T11:11:50Z" finished-at="2018-11-25T11:33:14Z">
+    <test name="Default test" duration-ms="1270324" started-at="2018-11-26T06:00:02Z" finished-at="2018-11-26T06:21:13Z">
       <class name="OMS.POSEIDON.Tests">
-        <test-method status="FAIL" signature="TestsForSAKSMQ()[pri:0, instance:OMS.POSEIDON.Tests@7d9d1a19]" name="TestsForSAKSMQ" duration-ms="1284194" started-at="2018-11-25T11:11:50Z" finished-at="2018-11-25T11:33:14Z">
+        <test-method status="FAIL" signature="TestsForSAKSMQ()[pri:0, instance:OMS.POSEIDON.Tests@7d9d1a19]" name="TestsForSAKSMQ" duration-ms="1270292" started-at="2018-11-26T06:00:03Z" finished-at="2018-11-26T06:21:13Z">
           <exception class="org.apache.http.client.HttpResponseException">
             <message>
               <![CDATA[Bad Request]]>
