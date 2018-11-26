@@ -37,7 +37,7 @@ public class PaymentPage {
 			try
 			{
 				DataTable oTestData=new DataTable(sWorkBook, sSheet, sTestCase);
-				GenericActions.driver_WaitForElementVisible(sScreenName+"paymentTypeByValWL");
+				GenericActions.driver_WaitForElementVisible(sScreenName+"cardNumberTX");
 
 				GenericActions.dataModify(sScreenName, oTestData, null, aWLFields, null, null, null, iIteration);
 				GenericActions.dataModify(sScreenName, oTestData, aTXFields, null, null, null, null, iIteration);
