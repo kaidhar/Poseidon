@@ -195,7 +195,7 @@ public class OMSCalls {
 		// String body = client.execute(httpPost, handler);
 		HttpResponse httpResponse = null;
 		httpResponse = client.execute(httpPost);
-		httpResponse.getEntity().getContent().close();
+		//httpResponse.getEntity().getContent().close();
 		int ResponseCode = httpResponse.getStatusLine().getStatusCode();
 
 		// TODO Auto-generated method stub

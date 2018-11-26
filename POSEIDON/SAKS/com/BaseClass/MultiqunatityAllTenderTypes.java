@@ -53,7 +53,8 @@ public class MultiqunatityAllTenderTypes {
 			skusearch.SearchSku();
 
 			AddtoCart_page cart = PageFactory.initElements(driver, AddtoCart_page.class);
-			cart.selectColor("Tahoe");
+			cart.selectColor("Benares");
+			cart.Increment();
 			cart.Increment();
 			cart.Addtocart();
 			cart.Checkout();

@@ -27,7 +27,7 @@ public class Baytest {
 		
 		//String OrderID="073069815";
 
-		/*String Banner = "SAKS";
+		String Banner = "BAY";
 
 		Thread.sleep(900*1000);
 
@@ -63,7 +63,7 @@ public class Baytest {
 		
 		
 		}
-		*/
+		
 		
 
 		
