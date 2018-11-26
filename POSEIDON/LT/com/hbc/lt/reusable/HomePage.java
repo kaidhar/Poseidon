@@ -79,7 +79,6 @@ public class HomePage {
 			String sScreenName = "LTHomePagePG.";
 			String[] aTXFields= {"searchStringTX"};
 			String sWebID="";
-
 			try
 			{
 				System.out.println("Start --> searchItem");
@@ -134,6 +133,73 @@ public class HomePage {
 
 
 	}
+	
+	public static void searchSecondItem(String sWorkBook, String sSheet, String sTestCase, int iIteration, boolean bExpectFailure)
+	{
+
+		if(!bErrorFound)
+		{
+			Assert.pass("Start --> searchSecondItem");
+
+			String sScreenName = "LTHomePagePG.";
+			String[] aTXFields= {"searchStringIDTX"};
+			String sWebID="";
+			try
+			{
+				System.out.println("Start --> searchItem");
+				DataTable oTestData=new DataTable(sWorkBook, sSheet, sTestCase);
+				sWebID=oTestData.getValue("searchStringTX");
+				System.out.println("Web ID is ----->"+ sWebID);
+				Assert.pass("Searching the web ID");
+				System.out.println("Searching the web ID");
+				/*GenericActions.driver_WaitForElementVisible(sScreenName+"searchStringTX");
+
+				if((GenericActions.driver_WaitForElementVisible(sScreenName+"closePopUpBN")))
+				{
+					driver.findElement(By.logicalName(sScreenName+"closePopUpBN")).click();
+					Assert.pass("Pop up is closed.");
+					System.out.println("Pop up is closed.");
+				}*/
+				GenericActions.driver_Wait(2);
+				GenericActions.dataModify(sScreenName, oTestData, aTXFields, null, null, null, null, iIteration);
+				
+			
+				driver.findElement(By.logicalName(sScreenName+"submitSearchWE")).click();
+				Assert.pass("Clicked on submit search button");
+				GenericActions.driver_WaitForElementVisible(sScreenName+"productNameWE");
+
+
+				if((GenericActions.driver_WaitForElementVisible(sScreenName+"ltTitleLK")))
+				{
+
+					Assert.pass("Lord & Taylor logo is ("+ driver.findElement(By.logicalName(sScreenName+"ltTitleLK")).getText()+") displayed");
+					System.out.println("Lord & Taylor logo is displayed");
+				}
+
+
+			}
+			catch (Exception e) 
+			{
+				bErrorFound = true;
+				e.printStackTrace();
+				if(bExpectFailure)
+				{
+					System.out.println("Failure in searchSecondItem  was expected!");
+					Assert.pass("Failure in searchSecondItem  was expected!");
+				}
+				else
+				{
+					Assert.fail("searchItem  failed ("+e.getStackTrace()+")");
+				}
+			} 
+			Assert.pass("End --> searchItem");
+		}
+
+
+
+
+	}
+	
 
 
 	public static void addItemToBag(String sWorkBook, String sSheet, String sTestCase, int iIteration, boolean bExpectFailure)

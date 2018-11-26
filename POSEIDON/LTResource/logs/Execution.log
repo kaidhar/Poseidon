@@ -7199,3 +7199,277 @@ INFO  2018-11-23 16:38:19,241 DONE Saving test report completed
 INFO  2018-11-23 16:38:19,241 DONE Closing driver ...
 INFO  2018-11-23 16:38:19,354 DONE Closing driver completed
 INFO  2018-11-23 16:38:19,354 DONE Completed execution
+INFO  2018-11-26 12:31:47,308 DONE Reading tests from file:/Users/h895428/git/Poseidon/POSEIDON/LTResource/resources/testsuite/LTTestPlan.xls , sheet: TestPlan, Row:1
+INFO  2018-11-26 12:31:47,309 DONE Reading tests from file:/Users/h895428/git/Poseidon/POSEIDON/LTResource/resources/testsuite/LTTestPlan.xls , sheet: TestPlan, Row:2
+INFO  2018-11-26 12:31:47,309 DONE Reading tests from file:/Users/h895428/git/Poseidon/POSEIDON/LTResource/resources/testsuite/LTTestPlan.xls , sheet: TestPlan, Row:3
+INFO  2018-11-26 12:31:47,313 DONE Loading configuration file from:/Users/h895428/git/Poseidon/POSEIDON/LTResource/resources/testsuite/LTTestPlan.xls completed
+INFO  2018-11-26 12:31:47,313 DONE Running tests ...
+INFO  2018-11-26 12:31:47,313 DONE Running tests from TestRunner ...
+INFO  2018-11-26 12:31:47,405 DONE Loading test(0) for execution:TC_ToLoginToLT ...
+INFO  2018-11-26 12:31:47,405 DONE Skipping test:TC_ToLoginToLT 
+INFO  2018-11-26 12:31:47,405 DONE Loading test(1) for execution:TC_ToAddItemToCart ...
+INFO  2018-11-26 12:31:47,405 DONE Skipping test:TC_ToAddItemToCart 
+INFO  2018-11-26 12:31:47,405 DONE Loading test(2) for execution:TC_ToWebSomFulfillment ...
+INFO  2018-11-26 12:31:47,405 DONE Running test:TC_ToWebSomFulfillment 
+INFO  2018-11-26 12:31:47,405 DONE TC_ToWebSomFulfillment execution started.
+INFO  2018-11-26 12:32:07,410 DONE Running test:TC_ToWebSomFulfillment - Executing method:TC_ToWebSomFulfillment
+INFO  2018-11-26 12:32:07,410 DONE com.hbc.lt.regression.CheckOutPageTest.TC_ToWebSomFulfillment execution started
+INFO  2018-11-26 12:32:09,121 DONE Dell Driver loaded, setting up timeouts
+INFO  2018-11-26 12:32:09,248 DONE Setting up timeouts
+INFO  2018-11-26 12:32:09,248 DONE Setting up timeouts, setting up implicitly timeout from environment to 30 sec
+INFO  2018-11-26 12:32:09,252 DONE Setting up timeouts, setting up pageLoadTimeout from environment to 60 sec
+INFO  2018-11-26 12:32:09,256 DONE Setting up timeouts, setting up setScriptTimeout timeout from environment to 120 sec
+INFO  2018-11-26 12:32:09,263 ASSERTION TC_ToWebSomFulfillment - TC_ToWebSomFulfillment : PASS Start-------> TC_ToWebSomFulfillment
+INFO  2018-11-26 12:32:09,269 ASSERTION TC_ToWebSomFulfillment - TC_ToWebSomFulfillment : PASS Start --> Open WEBSOM URL
+INFO  2018-11-26 12:32:23,887 ASSERTION TC_ToWebSomFulfillment - TC_ToWebSomFulfillment : PASS Open the WebSOM URL
+INFO  2018-11-26 12:32:24,983 ASSERTION TC_ToWebSomFulfillment - TC_ToWebSomFulfillment : PASS userNameTX is Visible
+INFO  2018-11-26 12:32:24,984 ASSERTION TC_ToWebSomFulfillment - TC_ToWebSomFulfillment : PASS Start --> dataModify
+INFO  2018-11-26 12:32:24,985 ERROR Location: com.hbc.acoe.framework.selenium.testdata.DataTable - Error while reading data from file:/Users/h895428/git/Poseidon/POSEIDON/LTResource/resources/testdata/LTTestData.xlsx  and from sheet:LTWebsomPage and Test case id:TC_ToWebSomFulfillment and Field:userNameTX. No matched column found with this test case id.  Please check the column name and letter case and spaces
+INFO  2018-11-26 12:32:24,985 ERROR Location: com.hbc.acoe.framework.selenium.testdata.DataTable - Error while reading data from file:/Users/h895428/git/Poseidon/POSEIDON/LTResource/resources/testdata/LTTestData.xlsx  and from sheet:LTWebsomPage and Test case id:TC_ToWebSomFulfillment and Field:userNameTX. Exception raised while reading column value.  Please check the column data for the given row. Exception:Cell index must be >= 0
+INFO  2018-11-26 12:32:25,017 ERROR Location: com.hbc.acoe.framework.selenium.testdata.DataTable - Error while reading data from file:/Users/h895428/git/Poseidon/POSEIDON/LTResource/resources/testdata/LTTestData.xlsx  and from sheet:LTWebsomPage and Test case id:TC_ToWebSomFulfillment and Field:loginPasswordTX. No matched column found with this test case id.  Please check the column name and letter case and spaces
+INFO  2018-11-26 12:32:25,017 ERROR Location: com.hbc.acoe.framework.selenium.testdata.DataTable - Error while reading data from file:/Users/h895428/git/Poseidon/POSEIDON/LTResource/resources/testdata/LTTestData.xlsx  and from sheet:LTWebsomPage and Test case id:TC_ToWebSomFulfillment and Field:loginPasswordTX. Exception raised while reading column value.  Please check the column data for the given row. Exception:Cell index must be >= 0
+INFO  2018-11-26 12:32:25,054 ASSERTION TC_ToWebSomFulfillment - TC_ToWebSomFulfillment : PASS End --> dataModify
+INFO  2018-11-26 12:32:32,590 ASSERTION TC_ToWebSomFulfillment - TC_ToWebSomFulfillment : PASS searchShipmentBN is not Visible
+INFO  2018-11-26 12:32:32,591 ASSERTION TC_ToWebSomFulfillment - TC_ToWebSomFulfillment : PASS End --> openWebsomURL
+INFO  2018-11-26 12:32:32,591 ASSERTION TC_ToWebSomFulfillment - TC_ToWebSomFulfillment : PASS Start --> searchShipemnt
+INFO  2018-11-26 13:33:09,753 DONE Reading tests from file:/Users/h895428/git/Poseidon/POSEIDON/LTResource/resources/testsuite/LTTestPlan.xls , sheet: TestPlan, Row:1
+INFO  2018-11-26 13:33:09,756 DONE Reading tests from file:/Users/h895428/git/Poseidon/POSEIDON/LTResource/resources/testsuite/LTTestPlan.xls , sheet: TestPlan, Row:2
+INFO  2018-11-26 13:33:09,756 DONE Reading tests from file:/Users/h895428/git/Poseidon/POSEIDON/LTResource/resources/testsuite/LTTestPlan.xls , sheet: TestPlan, Row:3
+INFO  2018-11-26 13:33:09,756 DONE Reading tests from file:/Users/h895428/git/Poseidon/POSEIDON/LTResource/resources/testsuite/LTTestPlan.xls , sheet: TestPlan, Row:4
+INFO  2018-11-26 13:33:09,761 ERROR Exception found while executing. Exception:null
+INFO  2018-11-26 13:33:09,761 ERROR Exception found while executing. Exception Stack Trace:java.lang.NullPointerException
+	at com.hbc.acoe.framework.run.ConfigData.getScripts(ConfigData.java:194)
+	at com.hbc.acoe.framework.run.TestRunner.runTests(TestRunner.java:225)
+	at com.hbc.lt.runner.Runner.main(Runner.java:10)
+
+INFO  2018-11-26 13:33:09,761 DONE Saving test report after exception ...
+INFO  2018-11-26 13:33:09,761 DONE Saving test report after exception completed
+INFO  2018-11-26 13:33:10,951 DONE Dell Driver loaded, setting up timeouts
+INFO  2018-11-26 13:33:11,091 DONE Setting up timeouts
+INFO  2018-11-26 13:33:11,091 DONE Setting up timeouts, setting up implicitly timeout from environment to 30 sec
+INFO  2018-11-26 13:33:11,095 DONE Setting up timeouts, setting up pageLoadTimeout from environment to 60 sec
+INFO  2018-11-26 13:33:11,099 DONE Setting up timeouts, setting up setScriptTimeout timeout from environment to 120 sec
+INFO  2018-11-26 14:18:07,197 DONE Reading tests from file:/Users/h895428/git/Poseidon/POSEIDON/LTResource/resources/testsuite/LTTestPlan.xls , sheet: TestPlan, Row:1
+INFO  2018-11-26 14:18:07,198 DONE Reading tests from file:/Users/h895428/git/Poseidon/POSEIDON/LTResource/resources/testsuite/LTTestPlan.xls , sheet: TestPlan, Row:2
+INFO  2018-11-26 14:18:07,198 DONE Reading tests from file:/Users/h895428/git/Poseidon/POSEIDON/LTResource/resources/testsuite/LTTestPlan.xls , sheet: TestPlan, Row:3
+INFO  2018-11-26 14:18:07,199 DONE Reading tests from file:/Users/h895428/git/Poseidon/POSEIDON/LTResource/resources/testsuite/LTTestPlan.xls , sheet: TestPlan, Row:4
+INFO  2018-11-26 14:18:07,202 DONE Loading configuration file from:/Users/h895428/git/Poseidon/POSEIDON/LTResource/resources/testsuite/LTTestPlan.xls completed
+INFO  2018-11-26 14:18:07,202 DONE Running tests ...
+INFO  2018-11-26 14:18:07,202 DONE Running tests from TestRunner ...
+INFO  2018-11-26 14:18:07,248 DONE Loading test(0) for execution:TC_ToLoginToLT ...
+INFO  2018-11-26 14:18:07,248 DONE Skipping test:TC_ToLoginToLT 
+INFO  2018-11-26 14:18:07,248 DONE Loading test(1) for execution:TC_ToAddItemToCart ...
+INFO  2018-11-26 14:18:07,248 DONE Skipping test:TC_ToAddItemToCart 
+INFO  2018-11-26 14:18:07,248 DONE Loading test(2) for execution:TC_ToWebSomFulfillment ...
+INFO  2018-11-26 14:18:07,248 DONE Skipping test:TC_ToWebSomFulfillment 
+INFO  2018-11-26 14:18:07,248 DONE Loading test(3) for execution:TC_ToPlaceSingleLineSingleQuantity ...
+INFO  2018-11-26 14:18:07,248 DONE Running test:TC_ToPlaceSingleLineSingleQuantity 
+INFO  2018-11-26 14:18:07,248 DONE TC_ToPlaceSingleLineSingleQuantity execution started.
+INFO  2018-11-26 14:18:27,255 DONE Running test:TC_ToPlaceSingleLineSingleQuantity - Executing method:TC_ToPlaceSingleLineSingleQuantity
+INFO  2018-11-26 14:18:27,255 DONE com.hbc.lt.regression.OrderTest.TC_ToPlaceSingleLineSingleQuantity execution started
+INFO  2018-11-26 14:18:28,490 DONE Dell Driver loaded, setting up timeouts
+INFO  2018-11-26 14:18:28,619 DONE Setting up timeouts
+INFO  2018-11-26 14:18:28,620 DONE Setting up timeouts, setting up implicitly timeout from environment to 30 sec
+INFO  2018-11-26 14:18:28,624 DONE Setting up timeouts, setting up pageLoadTimeout from environment to 60 sec
+INFO  2018-11-26 14:18:28,627 DONE Setting up timeouts, setting up setScriptTimeout timeout from environment to 120 sec
+INFO  2018-11-26 14:18:28,637 ASSERTION TC_ToPlaceSingleLineSingleQuantity - TC_ToPlaceSingleLineSingleQuantity : PASS Start-------> TC_ToPlaceSingleLineSingleQuantity
+INFO  2018-11-26 14:18:28,641 ASSERTION TC_ToPlaceSingleLineSingleQuantity - TC_ToPlaceSingleLineSingleQuantity : PASS Start --> OpenURL
+INFO  2018-11-26 14:18:49,619 ASSERTION TC_ToPlaceSingleLineSingleQuantity - TC_ToPlaceSingleLineSingleQuantity : PASS Open the WebPage
+INFO  2018-11-26 14:18:51,432 ASSERTION TC_ToPlaceSingleLineSingleQuantity - TC_ToPlaceSingleLineSingleQuantity : PASS ltTitleLK is Visible
+INFO  2018-11-26 14:18:51,451 ASSERTION TC_ToPlaceSingleLineSingleQuantity - TC_ToPlaceSingleLineSingleQuantity : PASS ltTitleLK is Visible
+INFO  2018-11-26 14:18:51,481 ASSERTION TC_ToPlaceSingleLineSingleQuantity - TC_ToPlaceSingleLineSingleQuantity : PASS Lord & Taylor logo is (Lord & Taylor) displayed
+INFO  2018-11-26 14:18:51,481 ASSERTION TC_ToPlaceSingleLineSingleQuantity - TC_ToPlaceSingleLineSingleQuantity : PASS End --> OpenURL
+INFO  2018-11-26 14:18:51,482 ASSERTION TC_ToPlaceSingleLineSingleQuantity - TC_ToPlaceSingleLineSingleQuantity : PASS Start --> changeShipToUS
+INFO  2018-11-26 14:18:51,508 ASSERTION TC_ToPlaceSingleLineSingleQuantity - TC_ToPlaceSingleLineSingleQuantity : PASS closePopUpBN is Visible
+INFO  2018-11-26 14:18:51,564 ASSERTION TC_ToPlaceSingleLineSingleQuantity - TC_ToPlaceSingleLineSingleQuantity : PASS Pop up is closed.
+INFO  2018-11-26 14:18:53,616 ASSERTION TC_ToPlaceSingleLineSingleQuantity - TC_ToPlaceSingleLineSingleQuantity : PASS shipToLK is Visible
+INFO  2018-11-26 14:18:56,762 ASSERTION TC_ToPlaceSingleLineSingleQuantity - TC_ToPlaceSingleLineSingleQuantity : PASS backToUSSiteBN is Visible
+INFO  2018-11-26 14:19:02,491 ASSERTION TC_ToPlaceSingleLineSingleQuantity - TC_ToPlaceSingleLineSingleQuantity : PASS Clicked on back to US button
+INFO  2018-11-26 14:19:02,527 ASSERTION TC_ToPlaceSingleLineSingleQuantity - TC_ToPlaceSingleLineSingleQuantity : PASS shipToLK is Visible
+INFO  2018-11-26 14:19:02,528 ASSERTION TC_ToPlaceSingleLineSingleQuantity - TC_ToPlaceSingleLineSingleQuantity : PASS End --> changeShipToUS
+INFO  2018-11-26 14:19:02,528 ASSERTION TC_ToPlaceSingleLineSingleQuantity - TC_ToPlaceSingleLineSingleQuantity : PASS Start --> searchItem
+INFO  2018-11-26 14:19:03,005 ASSERTION TC_ToPlaceSingleLineSingleQuantity - TC_ToPlaceSingleLineSingleQuantity : PASS Searching the web ID
+INFO  2018-11-26 14:19:05,007 ASSERTION TC_ToPlaceSingleLineSingleQuantity - TC_ToPlaceSingleLineSingleQuantity : PASS Start --> dataModify
+INFO  2018-11-26 14:19:05,086 ASSERTION TC_ToPlaceSingleLineSingleQuantity - TC_ToPlaceSingleLineSingleQuantity : PASS searchStringTX is Visible
+INFO  2018-11-26 14:19:05,294 ASSERTION TC_ToPlaceSingleLineSingleQuantity - TC_ToPlaceSingleLineSingleQuantity : PASS Field (searchStringTX) - Value (0500015182900)
+INFO  2018-11-26 14:19:05,295 ASSERTION TC_ToPlaceSingleLineSingleQuantity - TC_ToPlaceSingleLineSingleQuantity : PASS End --> dataModify
+INFO  2018-11-26 14:19:16,036 ASSERTION TC_ToPlaceSingleLineSingleQuantity - TC_ToPlaceSingleLineSingleQuantity : PASS Clicked on submit search button
+INFO  2018-11-26 14:19:16,101 ASSERTION TC_ToPlaceSingleLineSingleQuantity - TC_ToPlaceSingleLineSingleQuantity : PASS productNameWE is Visible
+INFO  2018-11-26 14:19:16,130 ASSERTION TC_ToPlaceSingleLineSingleQuantity - TC_ToPlaceSingleLineSingleQuantity : PASS ltTitleLK is Visible
+INFO  2018-11-26 14:19:16,160 ASSERTION TC_ToPlaceSingleLineSingleQuantity - TC_ToPlaceSingleLineSingleQuantity : PASS Lord & Taylor logo is (Lord & Taylor) displayed
+INFO  2018-11-26 14:19:16,161 ASSERTION TC_ToPlaceSingleLineSingleQuantity - TC_ToPlaceSingleLineSingleQuantity : PASS End --> searchItem
+INFO  2018-11-26 14:19:16,162 ASSERTION TC_ToPlaceSingleLineSingleQuantity - TC_ToPlaceSingleLineSingleQuantity : PASS Start --> addItemToBag
+INFO  2018-11-26 14:19:16,250 ASSERTION TC_ToPlaceSingleLineSingleQuantity - TC_ToPlaceSingleLineSingleQuantity : PASS productVariantWE is Visible
+INFO  2018-11-26 14:19:16,251 ASSERTION TC_ToPlaceSingleLineSingleQuantity - TC_ToPlaceSingleLineSingleQuantity : PASS Product cariant is disaplyed
+INFO  2018-11-26 14:19:16,279 ASSERTION TC_ToPlaceSingleLineSingleQuantity - TC_ToPlaceSingleLineSingleQuantity : PASS selectFirstColourWE is Visible
+INFO  2018-11-26 14:19:16,392 ASSERTION TC_ToPlaceSingleLineSingleQuantity - TC_ToPlaceSingleLineSingleQuantity : PASS Clicked on first colour
+INFO  2018-11-26 14:19:16,501 ASSERTION TC_ToPlaceSingleLineSingleQuantity - TC_ToPlaceSingleLineSingleQuantity : PASS sizeVariantWE is Visible
+INFO  2018-11-26 14:19:16,501 ASSERTION TC_ToPlaceSingleLineSingleQuantity - TC_ToPlaceSingleLineSingleQuantity : PASS Size variant is disaplyed
+INFO  2018-11-26 14:19:16,536 ASSERTION TC_ToPlaceSingleLineSingleQuantity - TC_ToPlaceSingleLineSingleQuantity : PASS selectFirstSizeWE is Visible
+INFO  2018-11-26 14:19:16,628 ASSERTION TC_ToPlaceSingleLineSingleQuantity - TC_ToPlaceSingleLineSingleQuantity : PASS Clicked on first size
+INFO  2018-11-26 14:19:16,629 ASSERTION TC_ToPlaceSingleLineSingleQuantity - TC_ToPlaceSingleLineSingleQuantity : PASS Start --> dataModify
+INFO  2018-11-26 14:19:16,707 ASSERTION TC_ToPlaceSingleLineSingleQuantity - TC_ToPlaceSingleLineSingleQuantity : PASS numberOfQuantityTX is Visible
+INFO  2018-11-26 14:19:17,004 ASSERTION TC_ToPlaceSingleLineSingleQuantity - TC_ToPlaceSingleLineSingleQuantity : PASS Field (numberOfQuantityTX) - Value (1)
+INFO  2018-11-26 14:19:17,005 ASSERTION TC_ToPlaceSingleLineSingleQuantity - TC_ToPlaceSingleLineSingleQuantity : PASS End --> dataModify
+INFO  2018-11-26 14:19:17,178 ASSERTION TC_ToPlaceSingleLineSingleQuantity - TC_ToPlaceSingleLineSingleQuantity : PASS Clicked on add to bag button
+INFO  2018-11-26 14:19:18,851 ASSERTION TC_ToPlaceSingleLineSingleQuantity - TC_ToPlaceSingleLineSingleQuantity : PASS bagOverlayPopupWE is Visible
+INFO  2018-11-26 14:19:20,885 ASSERTION TC_ToPlaceSingleLineSingleQuantity - TC_ToPlaceSingleLineSingleQuantity : PASS viewMyBagCheckoutBN is Visible
+INFO  2018-11-26 14:19:29,628 ASSERTION TC_ToPlaceSingleLineSingleQuantity - TC_ToPlaceSingleLineSingleQuantity : PASS End --> addItemToBag
+INFO  2018-11-26 14:19:29,639 ASSERTION TC_ToPlaceSingleLineSingleQuantity - TC_ToPlaceSingleLineSingleQuantity : PASS Start --> checkOut
+INFO  2018-11-26 14:19:29,673 ASSERTION TC_ToPlaceSingleLineSingleQuantity - TC_ToPlaceSingleLineSingleQuantity : PASS bagTitleWE is Visible
+INFO  2018-11-26 14:19:29,703 ASSERTION TC_ToPlaceSingleLineSingleQuantity - TC_ToPlaceSingleLineSingleQuantity : PASS checkOutBN is Visible
+INFO  2018-11-26 14:19:29,704 ASSERTION TC_ToPlaceSingleLineSingleQuantity - TC_ToPlaceSingleLineSingleQuantity : PASS Bag Title is disaplyed
+INFO  2018-11-26 14:19:30,143 ASSERTION TC_ToPlaceSingleLineSingleQuantity - TC_ToPlaceSingleLineSingleQuantity : PASS logInPopUpWE is Visible
+INFO  2018-11-26 14:19:30,227 ASSERTION TC_ToPlaceSingleLineSingleQuantity - TC_ToPlaceSingleLineSingleQuantity : PASS Clicked on guest user check out button
+INFO  2018-11-26 14:52:01,832 DONE Reading tests from file:/Users/h895428/git/Poseidon/POSEIDON/LTResource/resources/testsuite/LTTestPlan.xls , sheet: TestPlan, Row:1
+INFO  2018-11-26 14:52:01,833 DONE Reading tests from file:/Users/h895428/git/Poseidon/POSEIDON/LTResource/resources/testsuite/LTTestPlan.xls , sheet: TestPlan, Row:2
+INFO  2018-11-26 14:52:01,833 DONE Reading tests from file:/Users/h895428/git/Poseidon/POSEIDON/LTResource/resources/testsuite/LTTestPlan.xls , sheet: TestPlan, Row:3
+INFO  2018-11-26 14:52:01,834 DONE Reading tests from file:/Users/h895428/git/Poseidon/POSEIDON/LTResource/resources/testsuite/LTTestPlan.xls , sheet: TestPlan, Row:4
+INFO  2018-11-26 14:52:01,834 DONE Reading tests from file:/Users/h895428/git/Poseidon/POSEIDON/LTResource/resources/testsuite/LTTestPlan.xls , sheet: TestPlan, Row:5
+INFO  2018-11-26 14:52:01,840 DONE Loading configuration file from:/Users/h895428/git/Poseidon/POSEIDON/LTResource/resources/testsuite/LTTestPlan.xls completed
+INFO  2018-11-26 14:52:01,840 DONE Running tests ...
+INFO  2018-11-26 14:52:01,840 DONE Running tests from TestRunner ...
+INFO  2018-11-26 14:52:01,887 DONE Loading test(0) for execution:TC_ToLoginToLT ...
+INFO  2018-11-26 14:52:01,887 DONE Skipping test:TC_ToLoginToLT 
+INFO  2018-11-26 14:52:01,887 DONE Loading test(1) for execution:TC_ToAddItemToCart ...
+INFO  2018-11-26 14:52:01,887 DONE Skipping test:TC_ToAddItemToCart 
+INFO  2018-11-26 14:52:01,887 DONE Loading test(2) for execution:TC_ToWebSomFulfillment ...
+INFO  2018-11-26 14:52:01,887 DONE Skipping test:TC_ToWebSomFulfillment 
+INFO  2018-11-26 14:52:01,887 DONE Loading test(3) for execution:TC_ToPlaceSingleLineSingleQuantity ...
+INFO  2018-11-26 14:52:01,887 DONE Skipping test:TC_ToPlaceSingleLineSingleQuantity 
+INFO  2018-11-26 14:52:01,887 DONE Loading test(4) for execution:TC_ToPlaceSingleLineMultiQuantity ...
+INFO  2018-11-26 14:52:01,887 DONE Running test:TC_ToPlaceSingleLineMultiQuantity 
+INFO  2018-11-26 14:52:01,887 DONE TC_ToPlaceSingleLineMultiQuantity execution started.
+INFO  2018-11-26 14:52:21,892 DONE Running test:TC_ToPlaceSingleLineMultiQuantity - Executing method:TC_ToPlaceSingleLineMultiQuantity
+INFO  2018-11-26 14:52:21,892 DONE com.hbc.lt.regression.OrderTest.TC_ToPlaceSingleLineMultiQuantity execution started
+INFO  2018-11-26 14:52:23,099 DONE Dell Driver loaded, setting up timeouts
+INFO  2018-11-26 14:52:23,226 DONE Setting up timeouts
+INFO  2018-11-26 14:52:23,226 DONE Setting up timeouts, setting up implicitly timeout from environment to 30 sec
+INFO  2018-11-26 14:52:23,230 DONE Setting up timeouts, setting up pageLoadTimeout from environment to 60 sec
+INFO  2018-11-26 14:52:23,234 DONE Setting up timeouts, setting up setScriptTimeout timeout from environment to 120 sec
+INFO  2018-11-26 14:52:23,241 ASSERTION TC_ToPlaceSingleLineMultiQuantity - TC_ToPlaceSingleLineMultiQuantity : PASS Start-------> TC_ToPlaceSingleLineMultiQuantity
+INFO  2018-11-26 14:52:23,250 ASSERTION TC_ToPlaceSingleLineMultiQuantity - TC_ToPlaceSingleLineMultiQuantity : PASS Start --> OpenURL
+INFO  2018-11-26 14:52:41,116 ASSERTION TC_ToPlaceSingleLineMultiQuantity - TC_ToPlaceSingleLineMultiQuantity : PASS Open the WebPage
+INFO  2018-11-26 14:52:41,551 ASSERTION TC_ToPlaceSingleLineMultiQuantity - TC_ToPlaceSingleLineMultiQuantity : PASS ltTitleLK is Visible
+INFO  2018-11-26 14:52:41,572 ASSERTION TC_ToPlaceSingleLineMultiQuantity - TC_ToPlaceSingleLineMultiQuantity : PASS ltTitleLK is Visible
+INFO  2018-11-26 14:52:41,598 ASSERTION TC_ToPlaceSingleLineMultiQuantity - TC_ToPlaceSingleLineMultiQuantity : PASS Lord & Taylor logo is (Lord & Taylor) displayed
+INFO  2018-11-26 14:52:41,599 ASSERTION TC_ToPlaceSingleLineMultiQuantity - TC_ToPlaceSingleLineMultiQuantity : PASS End --> OpenURL
+INFO  2018-11-26 14:52:41,599 ASSERTION TC_ToPlaceSingleLineMultiQuantity - TC_ToPlaceSingleLineMultiQuantity : PASS Start --> changeShipToUS
+INFO  2018-11-26 14:52:41,628 ASSERTION TC_ToPlaceSingleLineMultiQuantity - TC_ToPlaceSingleLineMultiQuantity : PASS closePopUpBN is Visible
+INFO  2018-11-26 14:52:41,691 ASSERTION TC_ToPlaceSingleLineMultiQuantity - TC_ToPlaceSingleLineMultiQuantity : PASS Pop up is closed.
+INFO  2018-11-26 14:52:43,725 ASSERTION TC_ToPlaceSingleLineMultiQuantity - TC_ToPlaceSingleLineMultiQuantity : PASS shipToLK is Visible
+INFO  2018-11-26 14:52:46,719 ASSERTION TC_ToPlaceSingleLineMultiQuantity - TC_ToPlaceSingleLineMultiQuantity : PASS backToUSSiteBN is Visible
+INFO  2018-11-26 14:52:53,694 ASSERTION TC_ToPlaceSingleLineMultiQuantity - TC_ToPlaceSingleLineMultiQuantity : PASS Clicked on back to US button
+INFO  2018-11-26 14:52:53,731 ASSERTION TC_ToPlaceSingleLineMultiQuantity - TC_ToPlaceSingleLineMultiQuantity : PASS shipToLK is Visible
+INFO  2018-11-26 14:52:53,732 ASSERTION TC_ToPlaceSingleLineMultiQuantity - TC_ToPlaceSingleLineMultiQuantity : PASS End --> changeShipToUS
+INFO  2018-11-26 14:52:53,733 ASSERTION TC_ToPlaceSingleLineMultiQuantity - TC_ToPlaceSingleLineMultiQuantity : PASS Start --> searchItem
+INFO  2018-11-26 14:52:54,207 ASSERTION TC_ToPlaceSingleLineMultiQuantity - TC_ToPlaceSingleLineMultiQuantity : PASS Searching the web ID
+INFO  2018-11-26 14:52:56,208 ASSERTION TC_ToPlaceSingleLineMultiQuantity - TC_ToPlaceSingleLineMultiQuantity : PASS Start --> dataModify
+INFO  2018-11-26 14:52:56,288 ASSERTION TC_ToPlaceSingleLineMultiQuantity - TC_ToPlaceSingleLineMultiQuantity : PASS searchStringTX is Visible
+INFO  2018-11-26 14:52:56,476 ASSERTION TC_ToPlaceSingleLineMultiQuantity - TC_ToPlaceSingleLineMultiQuantity : PASS Field (searchStringTX) - Value (0500015182900)
+INFO  2018-11-26 14:52:56,477 ASSERTION TC_ToPlaceSingleLineMultiQuantity - TC_ToPlaceSingleLineMultiQuantity : PASS End --> dataModify
+INFO  2018-11-26 14:53:06,490 ASSERTION TC_ToPlaceSingleLineMultiQuantity - TC_ToPlaceSingleLineMultiQuantity : PASS Clicked on submit search button
+INFO  2018-11-26 14:53:06,563 ASSERTION TC_ToPlaceSingleLineMultiQuantity - TC_ToPlaceSingleLineMultiQuantity : PASS productNameWE is Visible
+INFO  2018-11-26 14:53:06,591 ASSERTION TC_ToPlaceSingleLineMultiQuantity - TC_ToPlaceSingleLineMultiQuantity : PASS ltTitleLK is Visible
+INFO  2018-11-26 14:53:06,615 ASSERTION TC_ToPlaceSingleLineMultiQuantity - TC_ToPlaceSingleLineMultiQuantity : PASS Lord & Taylor logo is (Lord & Taylor) displayed
+INFO  2018-11-26 14:53:06,616 ASSERTION TC_ToPlaceSingleLineMultiQuantity - TC_ToPlaceSingleLineMultiQuantity : PASS End --> searchItem
+INFO  2018-11-26 14:53:06,617 ASSERTION TC_ToPlaceSingleLineMultiQuantity - TC_ToPlaceSingleLineMultiQuantity : PASS Start --> addItemToBag
+INFO  2018-11-26 14:53:06,697 ASSERTION TC_ToPlaceSingleLineMultiQuantity - TC_ToPlaceSingleLineMultiQuantity : PASS productVariantWE is Visible
+INFO  2018-11-26 14:53:06,698 ASSERTION TC_ToPlaceSingleLineMultiQuantity - TC_ToPlaceSingleLineMultiQuantity : PASS Product cariant is disaplyed
+INFO  2018-11-26 14:53:06,726 ASSERTION TC_ToPlaceSingleLineMultiQuantity - TC_ToPlaceSingleLineMultiQuantity : PASS selectFirstColourWE is Visible
+INFO  2018-11-26 14:53:06,871 ASSERTION TC_ToPlaceSingleLineMultiQuantity - TC_ToPlaceSingleLineMultiQuantity : PASS Clicked on first colour
+INFO  2018-11-26 14:53:06,902 ASSERTION TC_ToPlaceSingleLineMultiQuantity - TC_ToPlaceSingleLineMultiQuantity : PASS sizeVariantWE is Visible
+INFO  2018-11-26 14:53:06,904 ASSERTION TC_ToPlaceSingleLineMultiQuantity - TC_ToPlaceSingleLineMultiQuantity : PASS Size variant is disaplyed
+INFO  2018-11-26 14:53:06,934 ASSERTION TC_ToPlaceSingleLineMultiQuantity - TC_ToPlaceSingleLineMultiQuantity : PASS selectFirstSizeWE is Visible
+INFO  2018-11-26 14:53:07,023 ASSERTION TC_ToPlaceSingleLineMultiQuantity - TC_ToPlaceSingleLineMultiQuantity : PASS Clicked on first size
+INFO  2018-11-26 14:53:07,024 ASSERTION TC_ToPlaceSingleLineMultiQuantity - TC_ToPlaceSingleLineMultiQuantity : PASS Start --> dataModify
+INFO  2018-11-26 14:53:07,107 ASSERTION TC_ToPlaceSingleLineMultiQuantity - TC_ToPlaceSingleLineMultiQuantity : PASS numberOfQuantityTX is Visible
+INFO  2018-11-26 14:53:07,401 ASSERTION TC_ToPlaceSingleLineMultiQuantity - TC_ToPlaceSingleLineMultiQuantity : PASS Field (numberOfQuantityTX) - Value (2)
+INFO  2018-11-26 14:53:07,402 ASSERTION TC_ToPlaceSingleLineMultiQuantity - TC_ToPlaceSingleLineMultiQuantity : PASS End --> dataModify
+INFO  2018-11-26 14:53:07,514 ASSERTION TC_ToPlaceSingleLineMultiQuantity - TC_ToPlaceSingleLineMultiQuantity : PASS Clicked on add to bag button
+INFO  2018-11-26 14:53:09,197 ASSERTION TC_ToPlaceSingleLineMultiQuantity - TC_ToPlaceSingleLineMultiQuantity : PASS bagOverlayPopupWE is Visible
+INFO  2018-11-26 14:53:11,232 ASSERTION TC_ToPlaceSingleLineMultiQuantity - TC_ToPlaceSingleLineMultiQuantity : PASS viewMyBagCheckoutBN is Visible
+INFO  2018-11-26 14:53:19,998 ASSERTION TC_ToPlaceSingleLineMultiQuantity - TC_ToPlaceSingleLineMultiQuantity : PASS End --> addItemToBag
+INFO  2018-11-26 14:53:20,006 ASSERTION TC_ToPlaceSingleLineMultiQuantity - TC_ToPlaceSingleLineMultiQuantity : PASS Start --> checkOut
+INFO  2018-11-26 14:53:20,040 ASSERTION TC_ToPlaceSingleLineMultiQuantity - TC_ToPlaceSingleLineMultiQuantity : PASS bagTitleWE is Visible
+INFO  2018-11-26 14:53:20,067 ASSERTION TC_ToPlaceSingleLineMultiQuantity - TC_ToPlaceSingleLineMultiQuantity : PASS checkOutBN is Visible
+INFO  2018-11-26 14:53:20,068 ASSERTION TC_ToPlaceSingleLineMultiQuantity - TC_ToPlaceSingleLineMultiQuantity : PASS Bag Title is disaplyed
+INFO  2018-11-26 14:53:20,493 ASSERTION TC_ToPlaceSingleLineMultiQuantity - TC_ToPlaceSingleLineMultiQuantity : PASS logInPopUpWE is Visible
+INFO  2018-11-26 14:53:20,572 ASSERTION TC_ToPlaceSingleLineMultiQuantity - TC_ToPlaceSingleLineMultiQuantity : PASS Clicked on guest user check out button
+INFO  2018-11-26 14:53:25,576 ASSERTION TC_ToPlaceSingleLineMultiQuantity - TC_ToPlaceSingleLineMultiQuantity : PASS End --> checkOut
+INFO  2018-11-26 14:53:25,579 ASSERTION TC_ToPlaceSingleLineMultiQuantity - TC_ToPlaceSingleLineMultiQuantity : PASS Start --> shippingAndBillingAddress
+INFO  2018-11-26 14:53:31,610 ASSERTION TC_ToPlaceSingleLineMultiQuantity - TC_ToPlaceSingleLineMultiQuantity : PASS shipBillTitleWE is Visible
+INFO  2018-11-26 14:53:31,616 ASSERTION TC_ToPlaceSingleLineMultiQuantity - TC_ToPlaceSingleLineMultiQuantity : PASS Start --> dataModify
+INFO  2018-11-26 14:53:31,753 DONE Element:org.openqa.selenium.support.ui.Select@6857099a - isMultiple - successful
+INFO  2018-11-26 14:53:31,753 DONE Element:org.openqa.selenium.support.ui.Select@6857099a - selectByValue - successful
+INFO  2018-11-26 14:53:31,753 ASSERTION TC_ToPlaceSingleLineMultiQuantity - TC_ToPlaceSingleLineMultiQuantity : PASS Field (shipStateByValWL) - Value (NY)
+INFO  2018-11-26 14:53:31,753 ASSERTION TC_ToPlaceSingleLineMultiQuantity - TC_ToPlaceSingleLineMultiQuantity : PASS End --> dataModify
+INFO  2018-11-26 14:53:31,754 ASSERTION TC_ToPlaceSingleLineMultiQuantity - TC_ToPlaceSingleLineMultiQuantity : PASS Start --> dataModify
+INFO  2018-11-26 14:53:31,829 DONE Element:org.openqa.selenium.support.ui.Select@53a8c0bb - isMultiple - successful
+INFO  2018-11-26 14:53:31,829 DONE Element:org.openqa.selenium.support.ui.Select@53a8c0bb - selectByValue - successful
+INFO  2018-11-26 14:53:31,829 ASSERTION TC_ToPlaceSingleLineMultiQuantity - TC_ToPlaceSingleLineMultiQuantity : PASS Field (shipStateByValWL) - Value (NY)
+INFO  2018-11-26 14:53:31,956 ASSERTION TC_ToPlaceSingleLineMultiQuantity - TC_ToPlaceSingleLineMultiQuantity : PASS FirstNameTX is Visible
+INFO  2018-11-26 14:53:32,186 ASSERTION TC_ToPlaceSingleLineMultiQuantity - TC_ToPlaceSingleLineMultiQuantity : PASS Field (FirstNameTX) - Value (Yogi)
+INFO  2018-11-26 14:53:32,238 ASSERTION TC_ToPlaceSingleLineMultiQuantity - TC_ToPlaceSingleLineMultiQuantity : PASS LastNameTX is Visible
+INFO  2018-11-26 14:53:32,340 ASSERTION TC_ToPlaceSingleLineMultiQuantity - TC_ToPlaceSingleLineMultiQuantity : PASS Field (LastNameTX) - Value (H)
+INFO  2018-11-26 14:53:32,402 ASSERTION TC_ToPlaceSingleLineMultiQuantity - TC_ToPlaceSingleLineMultiQuantity : PASS shipingAddressTX is Visible
+INFO  2018-11-26 14:53:32,547 ASSERTION TC_ToPlaceSingleLineMultiQuantity - TC_ToPlaceSingleLineMultiQuantity : PASS Field (shipingAddressTX) - Value (86 Austin Ave)
+INFO  2018-11-26 14:53:32,597 ASSERTION TC_ToPlaceSingleLineMultiQuantity - TC_ToPlaceSingleLineMultiQuantity : PASS shipCityTX is Visible
+INFO  2018-11-26 14:53:32,755 ASSERTION TC_ToPlaceSingleLineMultiQuantity - TC_ToPlaceSingleLineMultiQuantity : PASS Field (shipCityTX) - Value (Staten Island)
+INFO  2018-11-26 14:53:32,807 ASSERTION TC_ToPlaceSingleLineMultiQuantity - TC_ToPlaceSingleLineMultiQuantity : PASS shipEmailTX is Visible
+INFO  2018-11-26 14:53:32,977 ASSERTION TC_ToPlaceSingleLineMultiQuantity - TC_ToPlaceSingleLineMultiQuantity : PASS Field (shipEmailTX) - Value (hbcomsqa@gmail.com)
+INFO  2018-11-26 14:53:33,026 ASSERTION TC_ToPlaceSingleLineMultiQuantity - TC_ToPlaceSingleLineMultiQuantity : PASS shipPhoneTX is Visible
+INFO  2018-11-26 14:53:33,176 ASSERTION TC_ToPlaceSingleLineMultiQuantity - TC_ToPlaceSingleLineMultiQuantity : PASS Field (shipPhoneTX) - Value (0123456789)
+INFO  2018-11-26 14:53:33,227 ASSERTION TC_ToPlaceSingleLineMultiQuantity - TC_ToPlaceSingleLineMultiQuantity : PASS zipCodeTX is Visible
+INFO  2018-11-26 14:53:33,373 ASSERTION TC_ToPlaceSingleLineMultiQuantity - TC_ToPlaceSingleLineMultiQuantity : PASS Field (zipCodeTX) - Value (10305-4502)
+INFO  2018-11-26 14:53:33,374 ASSERTION TC_ToPlaceSingleLineMultiQuantity - TC_ToPlaceSingleLineMultiQuantity : PASS End --> dataModify
+INFO  2018-11-26 14:53:33,407 ASSERTION TC_ToPlaceSingleLineMultiQuantity - TC_ToPlaceSingleLineMultiQuantity : PASS continueCheckOutBN is Visible
+INFO  2018-11-26 14:53:33,811 ASSERTION TC_ToPlaceSingleLineMultiQuantity - TC_ToPlaceSingleLineMultiQuantity : PASS Clicked on continue CheckOut button
+INFO  2018-11-26 14:54:03,856 ASSERTION TC_ToPlaceSingleLineMultiQuantity - TC_ToPlaceSingleLineMultiQuantity : PASS userEnteredAdressBN is not Visible
+INFO  2018-11-26 14:54:03,864 ASSERTION TC_ToPlaceSingleLineMultiQuantity - TC_ToPlaceSingleLineMultiQuantity : PASS End --> shippingAndBillingAddress
+INFO  2018-11-26 14:54:03,866 ASSERTION TC_ToPlaceSingleLineMultiQuantity - TC_ToPlaceSingleLineMultiQuantity : PASS Start --> enterPaymentDetails
+INFO  2018-11-26 14:54:03,926 ASSERTION TC_ToPlaceSingleLineMultiQuantity - TC_ToPlaceSingleLineMultiQuantity : PASS cardNumberTX is Visible
+INFO  2018-11-26 14:54:03,927 ASSERTION TC_ToPlaceSingleLineMultiQuantity - TC_ToPlaceSingleLineMultiQuantity : PASS Start --> dataModify
+INFO  2018-11-26 14:54:04,049 DONE Element:org.openqa.selenium.support.ui.Select@797b109e - isMultiple - successful
+INFO  2018-11-26 14:54:04,050 DONE Element:org.openqa.selenium.support.ui.Select@797b109e - selectByValue - successful
+INFO  2018-11-26 14:54:04,050 ASSERTION TC_ToPlaceSingleLineMultiQuantity - TC_ToPlaceSingleLineMultiQuantity : PASS Field (paymentTypeByValWL) - Value (MC)
+INFO  2018-11-26 14:54:04,199 DONE Element:org.openqa.selenium.support.ui.Select@4825ae5 - isMultiple - successful
+INFO  2018-11-26 14:54:04,199 DONE Element:org.openqa.selenium.support.ui.Select@4825ae5 - selectByValue - successful
+INFO  2018-11-26 14:54:04,199 ASSERTION TC_ToPlaceSingleLineMultiQuantity - TC_ToPlaceSingleLineMultiQuantity : PASS Field (creditCardMonthByValWL) - Value (4)
+INFO  2018-11-26 14:54:04,315 DONE Element:org.openqa.selenium.support.ui.Select@160b8b78 - isMultiple - successful
+INFO  2018-11-26 14:54:04,315 DONE Element:org.openqa.selenium.support.ui.Select@160b8b78 - selectByValue - successful
+INFO  2018-11-26 14:54:04,315 ASSERTION TC_ToPlaceSingleLineMultiQuantity - TC_ToPlaceSingleLineMultiQuantity : PASS Field (creditCardYearByValWL) - Value (2026)
+INFO  2018-11-26 14:54:04,316 ASSERTION TC_ToPlaceSingleLineMultiQuantity - TC_ToPlaceSingleLineMultiQuantity : PASS End --> dataModify
+INFO  2018-11-26 14:54:04,323 ASSERTION TC_ToPlaceSingleLineMultiQuantity - TC_ToPlaceSingleLineMultiQuantity : PASS Start --> dataModify
+INFO  2018-11-26 14:54:04,385 ASSERTION TC_ToPlaceSingleLineMultiQuantity - TC_ToPlaceSingleLineMultiQuantity : PASS cardNumberTX is Visible
+INFO  2018-11-26 14:54:04,534 ASSERTION TC_ToPlaceSingleLineMultiQuantity - TC_ToPlaceSingleLineMultiQuantity : PASS Field (cardNumberTX) - Value (5132850000000016)
+INFO  2018-11-26 14:54:04,583 ASSERTION TC_ToPlaceSingleLineMultiQuantity - TC_ToPlaceSingleLineMultiQuantity : PASS cardHolderNameTX is Visible
+INFO  2018-11-26 14:54:04,708 ASSERTION TC_ToPlaceSingleLineMultiQuantity - TC_ToPlaceSingleLineMultiQuantity : PASS Field (cardHolderNameTX) - Value (Yogi)
+INFO  2018-11-26 14:54:04,764 ASSERTION TC_ToPlaceSingleLineMultiQuantity - TC_ToPlaceSingleLineMultiQuantity : PASS creditCardCVVTX is Visible
+INFO  2018-11-26 14:54:04,891 ASSERTION TC_ToPlaceSingleLineMultiQuantity - TC_ToPlaceSingleLineMultiQuantity : PASS Field (creditCardCVVTX) - Value (123)
+INFO  2018-11-26 14:54:04,892 ASSERTION TC_ToPlaceSingleLineMultiQuantity - TC_ToPlaceSingleLineMultiQuantity : PASS End --> dataModify
+INFO  2018-11-26 14:54:04,926 ASSERTION TC_ToPlaceSingleLineMultiQuantity - TC_ToPlaceSingleLineMultiQuantity : PASS paymentContinueCheckOutBN is Visible
+INFO  2018-11-26 14:54:05,008 ASSERTION TC_ToPlaceSingleLineMultiQuantity - TC_ToPlaceSingleLineMultiQuantity : PASS Clicked on continue CheckOut button
+INFO  2018-11-26 14:54:06,014 ASSERTION TC_ToPlaceSingleLineMultiQuantity - TC_ToPlaceSingleLineMultiQuantity : PASS End --> enterPaymentDetails
+INFO  2018-11-26 14:54:06,021 ASSERTION TC_ToPlaceSingleLineMultiQuantity - TC_ToPlaceSingleLineMultiQuantity : PASS Start --> reviewSubmitOrder
+INFO  2018-11-26 14:54:09,480 ASSERTION TC_ToPlaceSingleLineMultiQuantity - TC_ToPlaceSingleLineMultiQuantity : PASS placeOrderBN is Visible
+INFO  2018-11-26 14:54:10,567 ASSERTION TC_ToPlaceSingleLineMultiQuantity - TC_ToPlaceSingleLineMultiQuantity : PASS Clicked on place order button
+INFO  2018-11-26 14:54:18,253 ASSERTION TC_ToPlaceSingleLineMultiQuantity - TC_ToPlaceSingleLineMultiQuantity : PASS thankYouTitleWE is Visible
+INFO  2018-11-26 14:54:18,287 ASSERTION TC_ToPlaceSingleLineMultiQuantity - TC_ToPlaceSingleLineMultiQuantity : PASS order details is Order #1065063551 
+INFO  2018-11-26 14:54:18,310 ASSERTION TC_ToPlaceSingleLineMultiQuantity - TC_ToPlaceSingleLineMultiQuantity : PASS order Number is Order #1065063551 
+INFO  2018-11-26 14:54:18,311 ASSERTION TC_ToPlaceSingleLineMultiQuantity - TC_ToPlaceSingleLineMultiQuantity : PASS order Number is 1065063551 
+INFO  2018-11-26 14:54:18,358 ERROR Location: com.hbc.acoe.framework.selenium.testdata.DataTable - Error while writing data to file:/Users/h895428/git/Poseidon/POSEIDON/LTResource/resources/testdata/LTTestData.xlsx  and to sheet:TestOrder and Test case id:TC_ToPlaceSingleLineMultiQuantity and Field:ORDERS. Check if the file is available and not in use currently. Exception found:Index: 3, Size: 2
+INFO  2018-11-26 14:54:18,358 ASSERTION TC_ToPlaceSingleLineMultiQuantity - TC_ToPlaceSingleLineMultiQuantity : PASS End --> reviewSubmitOrder
+INFO  2018-11-26 14:54:18,359 ASSERTION TC_ToPlaceSingleLineMultiQuantity - TC_ToPlaceSingleLineMultiQuantity : PASS End-------> TC_ToPlaceSingleLineMultiQuantity
+INFO  2018-11-26 14:54:18,360 WARNING com.hbc.lt.regression.OrderTest.TC_ToPlaceSingleLineMultiQuantity execution completed
+INFO  2018-11-26 14:54:18,360 WARNING TC_ToPlaceSingleLineMultiQuantity,com.hbc.lt.regression.OrderTest.TC_ToPlaceSingleLineMultiQuantity execution completed
+INFO  2018-11-26 14:54:18,362 DONE Running test:TC_ToPlaceSingleLineMultiQuantity - Executing method:TC_ToPlaceSingleLineMultiQuantity completed
+INFO  2018-11-26 14:54:18,362 DONE Running tests completed
+INFO  2018-11-26 14:54:18,362 DONE Elapsed minutes: 2
+INFO  2018-11-26 14:54:18,366 DONE Started On: Mon Nov 26 14:52:01 IST 2018
+INFO  2018-11-26 14:54:18,366 DONE Completed On: Mon Nov 26 14:54:18 IST 2018
+INFO  2018-11-26 14:54:18,366 DONE Saving test report ....
+INFO  2018-11-26 14:54:18,367 DONE Saving test report completed
+INFO  2018-11-26 14:54:18,367 DONE Closing driver ...
+INFO  2018-11-26 14:54:18,504 DONE Closing driver completed
+INFO  2018-11-26 14:54:18,504 DONE Completed execution
