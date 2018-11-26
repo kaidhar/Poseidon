@@ -144,12 +144,12 @@ public class HomePage {
 			Assert.pass("Start --> addItemToBag");
 
 			String sScreenName = "LTHomePagePG.";
-
-
+			String[] aTXFields= {"numberOfQuantityTX"}; 
+			
 			try
 			{
 				System.out.println("Start --> starting addItemToBag ");
-				//DataTable oTestData=new DataTable(sWorkBook, sSheet, sTestCase);
+				DataTable oTestData=new DataTable(sWorkBook, sSheet, sTestCase);
 
 				if((GenericActions.driver_WaitForElementVisible(sScreenName+"productVariantWE")))
 				{
@@ -176,6 +176,8 @@ public class HomePage {
 						System.out.println("Clicked on first size");
 					}	
 				}
+				
+				GenericActions.dataModify(sScreenName, oTestData, aTXFields, null, null, null, null, iIteration);
 				
 				driver.findElement(By.logicalName(sScreenName+"addToBagBN")).click();
 				Assert.pass("Clicked on add to bag button");

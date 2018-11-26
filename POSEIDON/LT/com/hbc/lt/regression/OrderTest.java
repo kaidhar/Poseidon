@@ -7,11 +7,9 @@ import com.hbc.lt.reusable.HomePage;
 import com.hbc.lt.reusable.PaymentPage;
 import com.hbc.lt.reusable.ReviewSubmitPage;
 import com.hbc.lt.reusable.ShippingBillingPage;
-import com.hbc.lt.websom.LTFulfillmentPage;
 
-public class CheckOutPageTest {
+public class OrderTest {
 
-	
 	static String sWorkBook = GenericActions.getTestDataFile();
 	static String sSheet = "";
 	static String sTestCase = "";
@@ -34,12 +32,12 @@ public class CheckOutPageTest {
     '**********************************************************************************************************
 	 */
 	
-	public static void TC_ToAddItemToCart()
+	public static void TC_ToPlaceSingleLineSingleQuantity()
 	{
-		Assert.pass("Start-------> TC_ToAddItemToCart");
-		System.out.println("Start-------> TC_ToAddItemToCart");
+		Assert.pass("Start-------> TC_ToPlaceSingleLineSingleQuantity");
+		System.out.println("Start-------> TC_ToPlaceSingleLineSingleQuantity");
 		
-		sTestCase ="TC_ToAddItemToCart";
+		sTestCase ="TC_ToPlaceSingleLineSingleQuantity";
 				
 		sSheet="LTHomePage";
 		HomePage.openURL(sWorkBook, sSheet, sTestCase, iIteration, false);
@@ -61,11 +59,9 @@ public class CheckOutPageTest {
 		
 		
 		
-		Assert.pass("End-------> TC_ToAddItemToCart");
-		System.out.println("End-------> TC_ToAddItemToCart");
+		Assert.pass("End-------> TC_ToPlaceSingleLineSingleQuantity");
+		System.out.println("End-------> TC_ToPlaceSingleLineSingleQuantity");
 	}
-	
-	
 	/*
     '**********************************************************************************************************
     '  Name         :  
@@ -79,21 +75,34 @@ public class CheckOutPageTest {
     '**********************************************************************************************************
 	 */
 	
-	public static void TC_ToWebSomFulfillment()
+	public static void TC_ToPlaceSingleLineMultiQuantity()
 	{
-		Assert.pass("Start-------> TC_ToWebSomFulfillment");
-		System.out.println("Start-------> TC_ToWebSomFulfillment");
+		Assert.pass("Start-------> TC_ToPlaceSingleLineMultiQuantity");
+		System.out.println("Start-------> TC_ToPlaceSingleLineMultiQuantity");
 		
-		sTestCase ="TC_ToWebSomFulfillment";
+		sTestCase ="TC_ToPlaceSingleLineMultiQuantity";
 				
-		sSheet="LTWebsomPage";
-		LTFulfillmentPage.openWebsomURL(sWorkBook, sSheet, sTestCase, iIteration, false);
-		LTFulfillmentPage.searchShipemnt(sWorkBook, sSheet, sTestCase, iIteration, false);
-		LTFulfillmentPage.packOrder(sWorkBook, sSheet, sTestCase, iIteration, false);
-		LTFulfillmentPage.carrierShipment(sWorkBook, sSheet, sTestCase, iIteration, false);
+		sSheet="LTHomePage";
+		HomePage.openURL(sWorkBook, sSheet, sTestCase, iIteration, false);
+		HomePage.changeShipToUS(sWorkBook, sSheet, sTestCase, iIteration, false);
+		HomePage.searchItem(sWorkBook, sSheet, sTestCase, iIteration, false);
+		HomePage.addItemToBag(sWorkBook, sSheet, sTestCase, iIteration, false);
+		
+		sSheet="LTCheckOutPage";
+		CheckOutPage.checkOut(sWorkBook, sSheet, sTestCase, iIteration, false);
+		
+		sSheet="LTShipBillPage";
+		ShippingBillingPage.shippingAndBillingAddress(sWorkBook, sSheet, sTestCase, iIteration, false);
+		
+		sSheet="LTPaymentPage";
+		PaymentPage.enterPaymentDetails(sWorkBook, sSheet, sTestCase, iIteration, false);
+		
+		sSheet="LTReviewSubmitPage";
+		ReviewSubmitPage.reviewSubmitOrder(sWorkBook, sSheet, sTestCase, iIteration, false);
 		
 		
-		Assert.pass("End-------> TC_ToWebSomFulfillment");
-		System.out.println("End-------> TC_ToWebSomFulfillment");
+		
+		Assert.pass("End-------> TC_ToPlaceSingleLineMultiQuantity");
+		System.out.println("End-------> TC_ToPlaceSingleLineMultiQuantity");
 	}
 }
