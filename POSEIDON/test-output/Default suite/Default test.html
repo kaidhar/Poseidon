@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Sun Nov 25 16:41:50 IST 2018</td>
+<td>Started on:</td><td>Tue Nov 27 12:46:52 IST 2018</td>
 </tr>
-<tr><td>Total time:</td><td>1284 seconds (1284217 ms)</td>
+<tr><td>Total time:</td><td>110 seconds (110568 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -76,15 +76,15 @@ function toggleAllBoxes() {
 </tr>
 <tr>
 <td title='OMS.POSEIDON.Tests.TestsForSAKSMQ()'><b>TestsForSAKSMQ</b><br>Test class: OMS.POSEIDON.Tests</td>
-<td><div><pre>org.apache.http.client.HttpResponseException: Bad Request
-	at org.apache.http.impl.client.AbstractResponseHandler.handleResponse(AbstractResponseHandler.java:69)
-	at org.apache.http.impl.client.BasicResponseHandler.handleResponse(BasicResponseHandler.java:65)
-	at org.apache.http.impl.client.BasicResponseHandler.handleResponse(BasicResponseHandler.java:51)
-	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:222)
-	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:164)
-	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:139)
-	at oms.Poseidon.Webservices.OMSCalls.getOrderStatus(OMSCalls.java:122)
-	at OMS.POSEIDON.Tests.TestsForSAKSMQ(Tests.java:97)
+<td><div><pre>java.lang.AssertionError: expected [false] but found [true]
+	at org.testng.Assert.fail(Assert.java:96)
+	at org.testng.Assert.failNotEquals(Assert.java:776)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:137)
+	at org.testng.Assert.assertEquals(Assert.java:118)
+	at org.testng.Assert.assertEquals(Assert.java:568)
+	at org.testng.Assert.assertEquals(Assert.java:578)
+	at com.BaseClass.MultiqunatityAllTenderTypes.MultiLineAmex(MultiqunatityAllTenderTypes.java:154)
+	at OMS.POSEIDON.Tests.TestsForSAKSMQ(Tests.java:73)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -110,16 +110,16 @@ function toggleAllBoxes() {
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div><a href='#' onClick='toggleBox("stack-trace107075722", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace107075722'><pre>org.apache.http.client.HttpResponseException: Bad Request
-	at org.apache.http.impl.client.AbstractResponseHandler.handleResponse(AbstractResponseHandler.java:69)
-	at org.apache.http.impl.client.BasicResponseHandler.handleResponse(BasicResponseHandler.java:65)
-	at org.apache.http.impl.client.BasicResponseHandler.handleResponse(BasicResponseHandler.java:51)
-	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:222)
-	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:164)
-	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:139)
-	at oms.Poseidon.Webservices.OMSCalls.getOrderStatus(OMSCalls.java:122)
-	at OMS.POSEIDON.Tests.TestsForSAKSMQ(Tests.java:97)
+</pre></div><a href='#' onClick='toggleBox("stack-trace480903748", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace480903748'><pre>java.lang.AssertionError: expected [false] but found [true]
+	at org.testng.Assert.fail(Assert.java:96)
+	at org.testng.Assert.failNotEquals(Assert.java:776)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:137)
+	at org.testng.Assert.assertEquals(Assert.java:118)
+	at org.testng.Assert.assertEquals(Assert.java:568)
+	at org.testng.Assert.assertEquals(Assert.java:578)
+	at com.BaseClass.MultiqunatityAllTenderTypes.MultiLineAmex(MultiqunatityAllTenderTypes.java:154)
+	at OMS.POSEIDON.Tests.TestsForSAKSMQ(Tests.java:73)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -146,8 +146,8 @@ function toggleAllBoxes() {
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 </pre></div></td>
-<td>1284</td>
-<td>OMS.POSEIDON.Tests@7d9d1a19</td></tr>
+<td>110</td>
+<td>OMS.POSEIDON.Tests@685cb137</td></tr>
 </table><p>
 </body>
 </html>

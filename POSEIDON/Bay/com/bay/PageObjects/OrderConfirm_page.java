@@ -19,7 +19,7 @@ public class OrderConfirm_page {
 		this.driver = ldriver;
 	}
 
-	public Boolean GetorderNumber() throws InterruptedException {
+	/*public Boolean GetorderNumber() throws InterruptedException {
 		Thread.sleep(2000);
 		String OrderNo="";
 		try {
@@ -39,21 +39,23 @@ public class OrderConfirm_page {
 			return false;
 		}
 
-	}
+	}*/
 
 	public String ReturnorderNumber() throws InterruptedException {
 		Thread.sleep(2000);
 		String OrderNo="";
+		String stringOrderNo ="";
 		try {
 		 ele = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(prop.getProperty("retriveorder"))));
 		 OrderNo=ele.getText();
+		 stringOrderNo=(OrderNo.replaceAll("[^0-9]", ""));
 		 
 		}catch (Exception e) {
 			System.out.println("Unable to get OrderNumber");
 			e.printStackTrace();
 		}
-		System.out.println("orderno :  " + OrderNo);
-		return "0" + OrderNo;
+		System.out.println("orderno :  " + stringOrderNo);
+		return stringOrderNo;
 	}
 
 	public void PlaceOrder() {
@@ -68,3 +70,5 @@ public class OrderConfirm_page {
 
 	}
 }
+
+

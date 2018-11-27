@@ -2,26 +2,26 @@
 <testng-results skipped="0" failed="1" ignored="1" total="2" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="1284217" started-at="2018-11-25T11:11:50Z" finished-at="2018-11-25T11:33:14Z">
+  <suite name="Default suite" duration-ms="110568" started-at="2018-11-27T07:16:52Z" finished-at="2018-11-27T07:18:42Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="1284217" started-at="2018-11-25T11:11:50Z" finished-at="2018-11-25T11:33:14Z">
+    <test name="Default test" duration-ms="110568" started-at="2018-11-27T07:16:52Z" finished-at="2018-11-27T07:18:42Z">
       <class name="OMS.POSEIDON.Tests">
-        <test-method status="FAIL" signature="TestsForSAKSMQ()[pri:0, instance:OMS.POSEIDON.Tests@7d9d1a19]" name="TestsForSAKSMQ" duration-ms="1284194" started-at="2018-11-25T11:11:50Z" finished-at="2018-11-25T11:33:14Z">
-          <exception class="org.apache.http.client.HttpResponseException">
+        <test-method status="FAIL" signature="TestsForSAKSMQ()[pri:0, instance:OMS.POSEIDON.Tests@685cb137]" name="TestsForSAKSMQ" duration-ms="110543" started-at="2018-11-27T07:16:52Z" finished-at="2018-11-27T07:18:42Z">
+          <exception class="java.lang.AssertionError">
             <message>
-              <![CDATA[Bad Request]]>
+              <![CDATA[expected [false] but found [true]]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.apache.http.client.HttpResponseException: Bad Request
-at org.apache.http.impl.client.AbstractResponseHandler.handleResponse(AbstractResponseHandler.java:69)
-at org.apache.http.impl.client.BasicResponseHandler.handleResponse(BasicResponseHandler.java:65)
-at org.apache.http.impl.client.BasicResponseHandler.handleResponse(BasicResponseHandler.java:51)
-at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:222)
-at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:164)
-at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:139)
-at oms.Poseidon.Webservices.OMSCalls.getOrderStatus(OMSCalls.java:122)
-at OMS.POSEIDON.Tests.TestsForSAKSMQ(Tests.java:97)
+              <![CDATA[java.lang.AssertionError: expected [false] but found [true]
+at org.testng.Assert.fail(Assert.java:96)
+at org.testng.Assert.failNotEquals(Assert.java:776)
+at org.testng.Assert.assertEqualsImpl(Assert.java:137)
+at org.testng.Assert.assertEquals(Assert.java:118)
+at org.testng.Assert.assertEquals(Assert.java:568)
+at org.testng.Assert.assertEquals(Assert.java:578)
+at com.BaseClass.MultiqunatityAllTenderTypes.MultiLineAmex(MultiqunatityAllTenderTypes.java:154)
+at OMS.POSEIDON.Tests.TestsForSAKSMQ(Tests.java:73)
 at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -49,7 +49,7 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.apache.http.client.HttpResponseException -->
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TestsForSAKSMQ -->
