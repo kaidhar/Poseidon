@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <<<<<<< HEAD
+<<<<<<< HEAD
 <testng-results skipped="0" failed="1" ignored="1" total="2" passed="0">
   <reporter-output>
   </reporter-output>
@@ -30,6 +31,14 @@ at OMS.POSEIDON.Tests.TestsForSAKSMQ(Tests.java:73)
   <suite name="Default suite" duration-ms="17231" started-at="2018-11-22T06:57:15Z" finished-at="2018-11-22T06:57:32Z">
     <groups>
     </groups>
+=======
+<testng-results skipped="0" failed="1" ignored="0" total="1" passed="0">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="17231" started-at="2018-11-22T06:57:15Z" finished-at="2018-11-22T06:57:32Z">
+    <groups>
+    </groups>
+>>>>>>> parent of 2404fcd... First Commit
     <test name="Default test" duration-ms="17231" started-at="2018-11-22T06:57:15Z" finished-at="2018-11-22T06:57:32Z">
       <class name="OMS.POSEIDON.Tests">
         <test-method status="FAIL" signature="TestsForSAKS()[pri:0, instance:OMS.POSEIDON.Tests@7d9d1a19]" name="TestsForSAKS" duration-ms="17203" started-at="2018-11-22T06:57:15Z" finished-at="2018-11-22T06:57:32Z">
@@ -46,6 +55,9 @@ at java.io.FileInputStream.<init>(FileInputStream.java:93)
 at oms.Poseidon.Webservices.OMSCalls.getRequestProperty(OMSCalls.java:102)
 at oms.Poseidon.Webservices.OMSCalls.getOrderDetails(OMSCalls.java:25)
 at OMS.POSEIDON.Tests.TestsForSAKS(Tests.java:23)
+<<<<<<< HEAD
+>>>>>>> parent of 2404fcd... First Commit
+=======
 >>>>>>> parent of 2404fcd... First Commit
 at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
@@ -75,15 +87,21 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
             </full-stacktrace>
 <<<<<<< HEAD
+<<<<<<< HEAD
           </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TestsForSAKSMQ -->
 =======
+=======
+>>>>>>> parent of 2404fcd... First Commit
           </exception> <!-- java.io.FileNotFoundException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TestsForSAKS -->
+<<<<<<< HEAD
+>>>>>>> parent of 2404fcd... First Commit
+=======
 >>>>>>> parent of 2404fcd... First Commit
       </class> <!-- OMS.POSEIDON.Tests -->
     </test> <!-- Default test -->
