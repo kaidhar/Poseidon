@@ -94,4 +94,14 @@ public class AddtoCart_page {
 			e.printStackTrace();
 		}
 	}
+	
+	public void HideChekout() {
+		try {
+			ele = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(prop.getProperty("HideCheckout"))));
+			ele.click();
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+	}
+}
 }

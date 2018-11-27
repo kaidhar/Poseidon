@@ -1,40 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="1" ignored="0" total="1" passed="0">
+<testng-results skipped="0" failed="1" ignored="1" total="2" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="66234885" started-at="2018-11-26T11:00:50Z" finished-at="2018-11-27T05:24:45Z">
+  <suite name="Default suite" duration-ms="110568" started-at="2018-11-27T07:16:52Z" finished-at="2018-11-27T07:18:42Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="66234885" started-at="2018-11-26T11:00:50Z" finished-at="2018-11-27T05:24:45Z">
-      <class name="OMS.POSEIDON.Baytest">
-        <test-method status="FAIL" signature="TestsForSAKS()[pri:0, instance:OMS.POSEIDON.Baytest@685cb137]" name="TestsForSAKS" duration-ms="66234838" started-at="2018-11-26T11:00:50Z" finished-at="2018-11-27T05:24:44Z">
-          <exception class="java.net.UnknownHostException">
+    <test name="Default test" duration-ms="110568" started-at="2018-11-27T07:16:52Z" finished-at="2018-11-27T07:18:42Z">
+      <class name="OMS.POSEIDON.Tests">
+        <test-method status="FAIL" signature="TestsForSAKSMQ()[pri:0, instance:OMS.POSEIDON.Tests@685cb137]" name="TestsForSAKSMQ" duration-ms="110543" started-at="2018-11-27T07:16:52Z" finished-at="2018-11-27T07:18:42Z">
+          <exception class="java.lang.AssertionError">
             <message>
-              <![CDATA[hd3soms03lx.digital.hbc.com: nodename nor servname provided, or not known]]>
+              <![CDATA[expected [false] but found [true]]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.net.UnknownHostException: hd3soms03lx.digital.hbc.com: nodename nor servname provided, or not known
-at java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method)
-at java.net.InetAddress$2.lookupAllHostAddr(InetAddress.java:928)
-at java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1323)
-at java.net.InetAddress.getAllByName0(InetAddress.java:1276)
-at java.net.InetAddress.getAllByName(InetAddress.java:1192)
-at java.net.InetAddress.getAllByName(InetAddress.java:1126)
-at org.apache.http.impl.conn.SystemDefaultDnsResolver.resolve(SystemDefaultDnsResolver.java:45)
-at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:111)
-at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:353)
-at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:380)
-at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
-at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:184)
-at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:88)
-at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
-at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
-at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:71)
-at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:220)
-at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:164)
-at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:139)
-at oms.Poseidon.Webservices.OMSCalls.getOrderStatus(OMSCalls.java:122)
-at OMS.POSEIDON.Baytest.TestsForSAKS(Baytest.java:49)
+              <![CDATA[java.lang.AssertionError: expected [false] but found [true]
+at org.testng.Assert.fail(Assert.java:96)
+at org.testng.Assert.failNotEquals(Assert.java:776)
+at org.testng.Assert.assertEqualsImpl(Assert.java:137)
+at org.testng.Assert.assertEquals(Assert.java:118)
+at org.testng.Assert.assertEquals(Assert.java:568)
+at org.testng.Assert.assertEquals(Assert.java:578)
+at com.BaseClass.MultiqunatityAllTenderTypes.MultiLineAmex(MultiqunatityAllTenderTypes.java:154)
+at OMS.POSEIDON.Tests.TestsForSAKSMQ(Tests.java:73)
 at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -62,11 +49,11 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.net.UnknownHostException -->
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- TestsForSAKS -->
-      </class> <!-- OMS.POSEIDON.Baytest -->
+        </test-method> <!-- TestsForSAKSMQ -->
+      </class> <!-- OMS.POSEIDON.Tests -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
