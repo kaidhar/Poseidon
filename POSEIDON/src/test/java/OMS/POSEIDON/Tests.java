@@ -15,7 +15,7 @@ import oms.Poseidon.Webservices.OMSCalls;
 
 public class Tests {
 
-	@Test(enabled=false)
+	@Test(enabled=true)
 	public void TestsForSAKS() throws JSONException, IOException, JDOMException, InterruptedException {
 
 		SingleLineAllTenderTypes SQATT = new SingleLineAllTenderTypes();

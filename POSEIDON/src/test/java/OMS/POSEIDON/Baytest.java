@@ -23,7 +23,7 @@ public class Baytest {
 
 		SingleLineAllTenderTypes SQATT = new SingleLineAllTenderTypes();
 
-		String OrderID = SQATT.SinglineVisa();
+		//String OrderID = SQATT.SinglineVisa();
 		
 		//String OrderID="073069815";
 
@@ -64,6 +64,20 @@ public class Baytest {
 		
 		}
 		*/
+		
+
+		
+		
+	}
+	
+	@Test
+	public void TestForWebcomSIngleLine() throws JSONException, IOException, JDOMException, InterruptedException {
+
+		SingleLineAllTenderTypes SQATT = new SingleLineAllTenderTypes();
+
+		String OrderID = SQATT.SingleLine();
+		
+		
 		
 
 		

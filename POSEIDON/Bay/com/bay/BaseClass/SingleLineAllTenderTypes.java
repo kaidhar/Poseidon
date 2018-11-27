@@ -2,7 +2,6 @@ package com.bay.BaseClass;
 
 import com.bay.PageObjects.*;
 
-
 import com.bay.helper.*;
 import com.helper.BrowserFactory;
 
@@ -37,7 +36,7 @@ public class SingleLineAllTenderTypes {
 		}
 	}
 
-	public String  SinglineVisa() throws InterruptedException {
+	public String SinglineVisa() throws InterruptedException {
 		this.loadPropertiesFile();
 		WebDriver driver = BrowserFactory.launchBrowser("chrome", "https://qa.thebay.com");
 		String OrderID = null;
@@ -84,6 +83,37 @@ public class SingleLineAllTenderTypes {
 			Thread.sleep(2000);
 			String result = cnfrm.ReturnorderNumber();
 			Assert.assertEquals(true, result);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return OrderID;
+	}
+
+	/* WebCom order creation */
+	@Test
+	public String SingleLine() throws InterruptedException {
+		this.loadPropertiesFile();
+		WebDriver driver = BrowserFactory.launchBrowser(prop.getProperty("Driver"), prop.getProperty("COMURL"));
+		String OrderID = null;
+
+		try {
+			WebComLogin_page login = new WebComLogin_page(driver);
+			login.Login();
+
+			WebComCreateOrder_Page crtOdr = new WebComCreateOrder_Page(driver);
+			crtOdr.SelectEnterprise();
+
+			WebComCustomerSearch_page custSearch = new WebComCustomerSearch_page(driver);
+			custSearch.AddingExstingCustomer();
+
+			WebComAddProducts_page addProduct = new WebComAddProducts_page(driver);
+			addProduct.AddProduct();
+
+			WebCOMFulfillmentSummary_page fulfillment = new WebCOMFulfillmentSummary_page(driver);
+			fulfillment.SelectShippingMethod(prop.getProperty("ShippingService"));
+			fulfillment.AddPaymentMethodCreditcard(prop.getProperty("PaymentType"));
+			fulfillment.ConfirmOrder();
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
