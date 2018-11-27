@@ -145,7 +145,7 @@ public class OMSCalls {
 		InputStream input = null;
 
 		input = this.getClass().getResourceAsStream("Config.properties");
-		input = this.getClass().
+		
 		// FileInputStream("//Users//h895458//Desktop//Workspace//DataIssue//src//dataCheck//Keys.properties");
 		prop.load(input);
 		String Value = prop.getProperty(Prop);
