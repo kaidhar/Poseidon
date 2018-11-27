@@ -1,18 +1,13 @@
 package oms.Poseidon.Webservices;
 
-import java.io.FileInputStream;
-
 import java.io.ByteArrayInputStream;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Properties;
-import java.util.TreeMap;
-
 import org.apache.commons.codec.binary.Base64;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.ResponseHandler;
@@ -28,14 +23,11 @@ import org.jdom2.JDOMException;
 import org.jdom2.input.SAXBuilder;
 import org.json.JSONException;
 
-import com.google.common.base.Supplier;
-import com.google.common.collect.ListMultimap;
-import com.google.common.collect.Lists;
-import com.google.common.collect.Multimap;
-import com.google.common.collect.Multimaps;
 import com.hbc.lt.websom.SFSFulfilment;
 
 public class OMSCalls {
+	
+	public static String ShipNode = null;
 
 	private int getOrderDetails(String orderIDValue, String banner)
 			throws IOException, JSONException, JDOMException, InterruptedException {
@@ -145,6 +137,7 @@ public class OMSCalls {
 		InputStream input = null;
 
 		input = this.getClass().getResourceAsStream("Config.properties");
+		
 		// FileInputStream("//Users//h895458//Desktop//Workspace//DataIssue//src//dataCheck//Keys.properties");
 		prop.load(input);
 		String Value = prop.getProperty(Prop);
@@ -442,6 +435,7 @@ public class OMSCalls {
 
 		case "Ready for Backroom Pick":
 
+			ShipNode = Status.get(4);
 			SFS.openWebsomURL(OrderID, Status.get(4));
 			SFS.searchShipemnt(OrderID, Status.get(4));
 			SFS.packOrder(OrderID, Status.get(4));

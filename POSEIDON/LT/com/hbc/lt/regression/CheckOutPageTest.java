@@ -79,21 +79,5 @@ public class CheckOutPageTest {
     '**********************************************************************************************************
 	 */
 	
-	public static void TC_ToWebSomFulfillment()
-	{
-		Assert.pass("Start-------> TC_ToWebSomFulfillment");
-		System.out.println("Start-------> TC_ToWebSomFulfillment");
-		
-		sTestCase ="TC_ToWebSomFulfillment";
-				
-		sSheet="LTWebsomPage";
-		SFSFulfilment.openWebsomURL(sWorkBook, sSheet, sTestCase, iIteration, false);
-		SFSFulfilment.searchShipemnt(sWorkBook, sSheet, sTestCase, iIteration, false);
-		SFSFulfilment.packOrder(sWorkBook, sSheet, sTestCase, iIteration, false);
-		SFSFulfilment.carrierShipment(sWorkBook, sSheet, sTestCase, iIteration, false);
-		
-		
-		Assert.pass("End-------> TC_ToWebSomFulfillment");
-		System.out.println("End-------> TC_ToWebSomFulfillment");
-	}
+	
 }
