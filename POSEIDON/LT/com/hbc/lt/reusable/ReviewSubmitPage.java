@@ -10,6 +10,7 @@ import com.hbc.acoe.framework.selenium.verify.Assert;
 
 public class ReviewSubmitPage {
 
+	public static String sOnlyOrderNum="";
 
 	
 	/*
@@ -57,7 +58,7 @@ public class ReviewSubmitPage {
 
 				Assert.pass("order Number is "+ sOrderNumber + " ");
 				
-				String sOnlyOrderNum = GenericActions.extractOnlyNumber(sOrderNumber);
+				sOnlyOrderNum = GenericActions.extractOnlyNumber(sOrderNumber);
 
 				System.out.println("Order Number is ---->"+sOnlyOrderNum);
 
@@ -70,7 +71,8 @@ public class ReviewSubmitPage {
 				 String sOrderSheet = "TestOrder";
 				 DataTable oTestData=new DataTable(sWorkBook, sOrderSheet, sTestCase);
 				 //oTestData.setValue("TCID", 2, sTestCase);
-				 oTestData.setValue("ORDERS", 2, sOnlyOrderNum);
+				 oTestData.setValue("ORDERS", 3, sOnlyOrderNum);
+				
 				 
 				
 				
