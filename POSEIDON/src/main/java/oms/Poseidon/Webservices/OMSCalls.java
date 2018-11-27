@@ -1,4 +1,5 @@
 package oms.Poseidon.Webservices;
+
 import java.io.FileInputStream;
 
 import java.io.ByteArrayInputStream;
@@ -32,10 +33,11 @@ import com.google.common.collect.ListMultimap;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Multimap;
 import com.google.common.collect.Multimaps;
+import com.hbc.lt.websom.SFSFulfilment;
 
 public class OMSCalls {
 
-	public int getOrderDetails(String orderIDValue, String banner)
+	private int getOrderDetails(String orderIDValue, String banner)
 			throws IOException, JSONException, JDOMException, InterruptedException {
 
 		String requestTemplate = getRequestProperty("getOrderDetails");
@@ -90,7 +92,7 @@ public class OMSCalls {
 
 	}
 
-	public ArrayList<String> getOrderStatus(String orderIDValue, String banner)
+	private ArrayList<String> getOrderStatus(String orderIDValue, String banner)
 			throws IOException, JSONException, JDOMException, InterruptedException {
 
 		String requestTemplate = getRequestProperty("getOrderDetails");
@@ -132,8 +134,6 @@ public class OMSCalls {
 		Status.add(AttributeValue.get("ItemID").toString());
 
 		Status.add(AttributeValue.get("ShipNode").toString());
-		
-
 
 		return Status;
 
@@ -168,7 +168,7 @@ public class OMSCalls {
 
 	}
 
-	public void resolveBuyersRemorse(String orderID, String banner) throws IOException {
+	private void resolveBuyersRemorse(String orderID, String banner) throws IOException {
 		String requestTemplate = getRequestProperty("BuyersRemorse");
 		String environment = getProperty("Env");
 		String url = getProperty("WSBRH" + environment);
@@ -202,7 +202,7 @@ public class OMSCalls {
 
 	}
 
-	public void runScheduleAgent(String orderID, String banner) throws IOException {
+	private void runScheduleAgent(String orderID, String banner) throws IOException {
 		String requestTemplate = getRequestProperty("ScheduleAgent");
 		String environment = getProperty("Env");
 		String url = getProperty("WSSchedule" + environment);
@@ -233,7 +233,7 @@ public class OMSCalls {
 
 	}
 
-	public void runReleaseAgent(String orderID, String banner) throws IOException {
+	private void runReleaseAgent(String orderID, String banner) throws IOException {
 		String requestTemplate = getRequestProperty("ReleaseAgent");
 		String environment = getProperty("Env");
 		String url = getProperty("WSRelease" + environment);
@@ -259,13 +259,13 @@ public class OMSCalls {
 		// String body = client.execute(httpPost, handler);
 		HttpResponse httpResponse = null;
 		httpResponse = client.execute(httpPost);
-		//httpResponse.getEntity().getContent().close();
+		// httpResponse.getEntity().getContent().close();
 		int ResponseCode = httpResponse.getStatusLine().getStatusCode();
 		// TODO Auto-generated method stub
 
 	}
 
-	public HashMap<String, String> XMLConvertor(String body) throws JSONException, IOException, JDOMException {
+	private HashMap<String, String> XMLConvertor(String body) throws JSONException, IOException, JDOMException {
 
 		SAXBuilder saxBuilder = new SAXBuilder();
 
@@ -277,16 +277,17 @@ public class OMSCalls {
 		List<Element> Values = classElement.getChildren();
 		List<Attribute> ValueNodes = classElement.getAttributes();
 
-	 HashMap<String, String> AttributesValues = new HashMap<String, String>();
+		HashMap<String, String> AttributesValues = new HashMap<String, String>();
 
 		// Multimap<String, String> AttributesValues = ArrayListMultimap.create();
 
-//		ListMultimap<String, String> AttributesValues = Multimaps
-//				.newListMultimap(new TreeMap<String, Collection<String>>(), new Supplier<List<String>>() {
-//					public List<String> get() {
-//						return Lists.newArrayList();
-//					}
-//				});
+		// ListMultimap<String, String> AttributesValues = Multimaps
+		// .newListMultimap(new TreeMap<String, Collection<String>>(), new
+		// Supplier<List<String>>() {
+		// public List<String> get() {
+		// return Lists.newArrayList();
+		// }
+		// });
 
 		for (int temp = 0; temp < Values.size(); temp++) {
 			Element Value = Values.get(temp);
@@ -348,8 +349,8 @@ public class OMSCalls {
 
 	}
 
-	public int ShipSLSQOrder(String orderID, String banner, String Qty, String ReleaseKey, String ItemID,String ShipNode)
-			throws IOException {
+	private int ShipSLDCOrder(String orderID, String banner, String Qty, String ReleaseKey, String ItemID,
+			String ShipNode) throws IOException {
 
 		String requestTemplate = getRequestProperty("ShippingAgent");
 		String requestTemplate1 = requestTemplate.replaceAll("&orderIDValue", orderID);
@@ -386,8 +387,72 @@ public class OMSCalls {
 		httpResponse = client.execute(httpPost);
 		int ResponseCode = httpResponse.getStatusLine().getStatusCode();
 		return ResponseCode;
-		
+
 		// TODO Auto-generated method stub
+
+	}
+
+	public void AgentRuns(String OrderId, String Banner)
+			throws IOException, InterruptedException, JSONException, JDOMException {
+
+		if (Banner.equalsIgnoreCase("Saks") || Banner.equalsIgnoreCase("OFF5")) {
+			Thread.sleep(900 * 1000);
+		} else
+
+		{
+
+			Thread.sleep(300 * 1000);
+		}
+
+		int ResponseCode = getOrderDetails(OrderId, Banner);
+		System.out.println(ResponseCode);
+
+		if (ResponseCode == 200) {
+			resolveBuyersRemorse(OrderId, Banner);
+			Thread.sleep(5000);
+			runScheduleAgent(OrderId, Banner);
+			Thread.sleep(5000);
+			runReleaseAgent(OrderId, Banner);
+		}
+
+		else {
+			System.out.println("Order has not reached OMS");
+		}
+		Thread.sleep(3000);
+
+	}
+
+	public void ShipmentCall(String OrderID, String Banner)
+			throws IOException, JSONException, JDOMException, InterruptedException {
+		ArrayList<String> Status = getOrderStatus(OrderID, Banner);
+
+		SFSFulfilment SFS = new SFSFulfilment();
+
+		switch (Status.get(0)) {
+
+		case "Released":
+			int ResponseCodeforShip = ShipSLDCOrder(OrderID, Banner, Status.get(1), Status.get(2), Status.get(3),
+					Status.get(4));
+			if (ResponseCodeforShip == 200) {
+				System.out.println("Shipment Confirmed");
+			} else {
+				System.out.println("Error in Shipment");
+			}
+			break;
+
+		case "Ready for Backroom Pick":
+
+			SFS.openWebsomURL(OrderID, Status.get(4));
+			SFS.searchShipemnt(OrderID, Status.get(4));
+			SFS.packOrder(OrderID, Status.get(4));
+			SFS.carrierShipment(OrderID, Status.get(4));
+			break;
+
+		}
+
+		ArrayList<String> FinalStatus = getOrderStatus(OrderID, Banner);
+
+		System.out.println("Final Status of the Order is " + FinalStatus.get(0));
 
 	}
 

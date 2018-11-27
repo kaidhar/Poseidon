@@ -267,7 +267,7 @@ public class GenericActions {
 	'  Name         :  
 	'  Description  :  
 	'----------------------------------------------------------------------------------------------------------
-	'  Created by 	:  Yogiraj
+	'  Created by 	:  
 	'  Create Date	:  
 	'----------------------------------------------------------------------------------------------------------
 	'  Notes        : 
@@ -289,7 +289,7 @@ public class GenericActions {
 	'  Name         :  chrome_HeadlesBrowser
 	'  Description  :  Method to launch chroem healdess browser
 	'----------------------------------------------------------------------------------------------------------
-	'  Created by 	:  Yogiraj
+	'  Created by 	:  
 	'  Create Date	:  
 	'----------------------------------------------------------------------------------------------------------
 	'  Notes        : 
@@ -344,7 +344,7 @@ public class GenericActions {
 	'  Name         :  turnOFFImplicitWait
 	'  Description  :  Method to set implicit wait to Zero seconds
 	'----------------------------------------------------------------------------------------------------------
-	'  Created by 	:  Yogiraj
+	'  Created by 	:  
 	'  Create Date	:  
 	'----------------------------------------------------------------------------------------------------------
 	'  Notes        : 
@@ -360,7 +360,7 @@ public class GenericActions {
 	'  Name         :  waitForDomToLoad
 	'  Description  :  Method to wait for the element to present on Dom
 	'----------------------------------------------------------------------------------------------------------
-	'  Created by 	:  Yogiraj
+	'  Created by 	:  
 	'  Create Date	:  
 	'----------------------------------------------------------------------------------------------------------
 	'  Notes        : 

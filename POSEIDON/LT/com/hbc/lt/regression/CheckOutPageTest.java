@@ -7,6 +7,7 @@ import com.hbc.lt.reusable.HomePage;
 import com.hbc.lt.reusable.PaymentPage;
 import com.hbc.lt.reusable.ReviewSubmitPage;
 import com.hbc.lt.reusable.ShippingBillingPage;
+import com.hbc.lt.websom.SFSFulfilment;
 
 public class CheckOutPageTest {
 
@@ -62,5 +63,37 @@ public class CheckOutPageTest {
 		
 		Assert.pass("End-------> TC_ToAddItemToCart");
 		System.out.println("End-------> TC_ToAddItemToCart");
+	}
+	
+	
+	/*
+    '**********************************************************************************************************
+    '  Name         :  
+    '  Description  :  
+    '----------------------------------------------------------------------------------------------------------
+    '  Created by        :  
+    '  Create Date       : 
+    '----------------------------------------------------------------------------------------------------------
+    '  Notes        : 
+    '----------------------------------------------------------------------------------------------------------
+    '**********************************************************************************************************
+	 */
+	
+	public static void TC_ToWebSomFulfillment()
+	{
+		Assert.pass("Start-------> TC_ToWebSomFulfillment");
+		System.out.println("Start-------> TC_ToWebSomFulfillment");
+		
+		sTestCase ="TC_ToWebSomFulfillment";
+				
+		sSheet="LTWebsomPage";
+		SFSFulfilment.openWebsomURL(sWorkBook, sSheet, sTestCase, iIteration, false);
+		SFSFulfilment.searchShipemnt(sWorkBook, sSheet, sTestCase, iIteration, false);
+		SFSFulfilment.packOrder(sWorkBook, sSheet, sTestCase, iIteration, false);
+		SFSFulfilment.carrierShipment(sWorkBook, sSheet, sTestCase, iIteration, false);
+		
+		
+		Assert.pass("End-------> TC_ToWebSomFulfillment");
+		System.out.println("End-------> TC_ToWebSomFulfillment");
 	}
 }
