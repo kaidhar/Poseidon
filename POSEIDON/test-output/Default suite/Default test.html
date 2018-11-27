@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Mon Nov 26 15:41:03 IST 2018</td>
+<td>Started on:</td><td>Mon Nov 26 16:30:50 IST 2018</td>
 </tr>
-<tr><td>Total time:</td><td>823 seconds (823939 ms)</td>
+<tr><td>Total time:</td><td>66234 seconds (66234885 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -76,11 +76,24 @@ function toggleAllBoxes() {
 </tr>
 <tr>
 <td title='OMS.POSEIDON.Baytest.TestsForSAKS()'><b>TestsForSAKS</b><br>Test class: OMS.POSEIDON.Baytest</td>
-<td><div><pre>org.apache.http.client.HttpResponseException: Bad Request
-	at org.apache.http.impl.client.AbstractResponseHandler.handleResponse(AbstractResponseHandler.java:69)
-	at org.apache.http.impl.client.BasicResponseHandler.handleResponse(BasicResponseHandler.java:65)
-	at org.apache.http.impl.client.BasicResponseHandler.handleResponse(BasicResponseHandler.java:51)
-	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:222)
+<td><div><pre>java.net.UnknownHostException: hd3soms03lx.digital.hbc.com: nodename nor servname provided, or not known
+	at java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method)
+	at java.net.InetAddress$2.lookupAllHostAddr(InetAddress.java:928)
+	at java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1323)
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1276)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1192)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1126)
+	at org.apache.http.impl.conn.SystemDefaultDnsResolver.resolve(SystemDefaultDnsResolver.java:45)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:111)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:353)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:380)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:184)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:88)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:71)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:220)
 	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:164)
 	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:139)
 	at oms.Poseidon.Webservices.OMSCalls.getOrderStatus(OMSCalls.java:122)
@@ -110,12 +123,25 @@ function toggleAllBoxes() {
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div><a href='#' onClick='toggleBox("stack-trace1217347025", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1217347025'><pre>org.apache.http.client.HttpResponseException: Bad Request
-	at org.apache.http.impl.client.AbstractResponseHandler.handleResponse(AbstractResponseHandler.java:69)
-	at org.apache.http.impl.client.BasicResponseHandler.handleResponse(BasicResponseHandler.java:65)
-	at org.apache.http.impl.client.BasicResponseHandler.handleResponse(BasicResponseHandler.java:51)
-	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:222)
+</pre></div><a href='#' onClick='toggleBox("stack-trace602423811", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace602423811'><pre>java.net.UnknownHostException: hd3soms03lx.digital.hbc.com: nodename nor servname provided, or not known
+	at java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method)
+	at java.net.InetAddress$2.lookupAllHostAddr(InetAddress.java:928)
+	at java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1323)
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1276)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1192)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1126)
+	at org.apache.http.impl.conn.SystemDefaultDnsResolver.resolve(SystemDefaultDnsResolver.java:45)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:111)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:353)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:380)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:184)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:88)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:71)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:220)
 	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:164)
 	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:139)
 	at oms.Poseidon.Webservices.OMSCalls.getOrderStatus(OMSCalls.java:122)
@@ -146,8 +172,8 @@ function toggleAllBoxes() {
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 </pre></div></td>
-<td>823</td>
-<td>OMS.POSEIDON.Baytest@7d9d1a19</td></tr>
+<td>66234</td>
+<td>OMS.POSEIDON.Baytest@685cb137</td></tr>
 </table><p>
 </body>
 </html>

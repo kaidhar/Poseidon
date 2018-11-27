@@ -2,22 +2,35 @@
 <testng-results skipped="0" failed="1" ignored="0" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="823939" started-at="2018-11-26T10:11:03Z" finished-at="2018-11-26T10:24:47Z">
+  <suite name="Default suite" duration-ms="66234885" started-at="2018-11-26T11:00:50Z" finished-at="2018-11-27T05:24:45Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="823939" started-at="2018-11-26T10:11:03Z" finished-at="2018-11-26T10:24:47Z">
+    <test name="Default test" duration-ms="66234885" started-at="2018-11-26T11:00:50Z" finished-at="2018-11-27T05:24:45Z">
       <class name="OMS.POSEIDON.Baytest">
-        <test-method status="FAIL" signature="TestsForSAKS()[pri:0, instance:OMS.POSEIDON.Baytest@7d9d1a19]" name="TestsForSAKS" duration-ms="823915" started-at="2018-11-26T10:11:03Z" finished-at="2018-11-26T10:24:47Z">
-          <exception class="org.apache.http.client.HttpResponseException">
+        <test-method status="FAIL" signature="TestsForSAKS()[pri:0, instance:OMS.POSEIDON.Baytest@685cb137]" name="TestsForSAKS" duration-ms="66234838" started-at="2018-11-26T11:00:50Z" finished-at="2018-11-27T05:24:44Z">
+          <exception class="java.net.UnknownHostException">
             <message>
-              <![CDATA[Bad Request]]>
+              <![CDATA[hd3soms03lx.digital.hbc.com: nodename nor servname provided, or not known]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.apache.http.client.HttpResponseException: Bad Request
-at org.apache.http.impl.client.AbstractResponseHandler.handleResponse(AbstractResponseHandler.java:69)
-at org.apache.http.impl.client.BasicResponseHandler.handleResponse(BasicResponseHandler.java:65)
-at org.apache.http.impl.client.BasicResponseHandler.handleResponse(BasicResponseHandler.java:51)
-at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:222)
+              <![CDATA[java.net.UnknownHostException: hd3soms03lx.digital.hbc.com: nodename nor servname provided, or not known
+at java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method)
+at java.net.InetAddress$2.lookupAllHostAddr(InetAddress.java:928)
+at java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1323)
+at java.net.InetAddress.getAllByName0(InetAddress.java:1276)
+at java.net.InetAddress.getAllByName(InetAddress.java:1192)
+at java.net.InetAddress.getAllByName(InetAddress.java:1126)
+at org.apache.http.impl.conn.SystemDefaultDnsResolver.resolve(SystemDefaultDnsResolver.java:45)
+at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:111)
+at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:353)
+at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:380)
+at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:184)
+at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:88)
+at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
+at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:71)
+at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:220)
 at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:164)
 at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:139)
 at oms.Poseidon.Webservices.OMSCalls.getOrderStatus(OMSCalls.java:122)
@@ -49,7 +62,7 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.apache.http.client.HttpResponseException -->
+          </exception> <!-- java.net.UnknownHostException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TestsForSAKS -->
