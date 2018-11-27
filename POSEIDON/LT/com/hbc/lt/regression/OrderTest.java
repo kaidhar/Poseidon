@@ -105,4 +105,96 @@ public class OrderTest {
 		Assert.pass("End-------> TC_ToPlaceSingleLineMultiQuantity");
 		System.out.println("End-------> TC_ToPlaceSingleLineMultiQuantity");
 	}
+	/*
+    '**********************************************************************************************************
+    '  Name         :  
+    '  Description  :  
+    '----------------------------------------------------------------------------------------------------------
+    '  Created by        :  
+    '  Create Date       : 
+    '----------------------------------------------------------------------------------------------------------
+    '  Notes        : 
+    '----------------------------------------------------------------------------------------------------------
+    '**********************************************************************************************************
+	 */
+	
+	public static void TC_ToPlaceMultiLineSingleQuantity()
+	{
+		Assert.pass("Start-------> TC_ToPlaceMultiLineSingleQuantity");
+		System.out.println("Start-------> TC_ToPlaceMultiLineSingleQuantity");
+		
+		sTestCase ="TC_ToPlaceMultiLineSingleQuantity";
+				
+		sSheet="LTHomePage";
+		HomePage.openURL(sWorkBook, sSheet, sTestCase, iIteration, false);
+		HomePage.changeShipToUS(sWorkBook, sSheet, sTestCase, iIteration, false);
+		HomePage.searchItem(sWorkBook, sSheet, sTestCase, iIteration, false);
+		HomePage.addItemToBag(sWorkBook, sSheet, sTestCase, iIteration, false);
+		HomePage.searchSecondItem(sWorkBook, sSheet, sTestCase, iIteration, false);
+		HomePage.addItemToBag(sWorkBook, sSheet, sTestCase, iIteration, false);
+		
+		sSheet="LTCheckOutPage";
+		CheckOutPage.checkOut(sWorkBook, sSheet, sTestCase, iIteration, false);
+		
+		sSheet="LTShipBillPage";
+		ShippingBillingPage.shippingAndBillingAddress(sWorkBook, sSheet, sTestCase, iIteration, false);
+		
+		sSheet="LTPaymentPage";
+		PaymentPage.enterPaymentDetails(sWorkBook, sSheet, sTestCase, iIteration, false);
+		
+		sSheet="LTReviewSubmitPage";
+		ReviewSubmitPage.reviewSubmitOrder(sWorkBook, sSheet, sTestCase, iIteration, false);
+		
+		
+		
+		
+		Assert.pass("End-------> TC_ToPlaceMultiLineSingleQuantity");
+		System.out.println("End-------> TC_ToPlaceMultiLineSingleQuantity");
+	}
+	/*
+    '**********************************************************************************************************
+    '  Name         :  
+    '  Description  :  
+    '----------------------------------------------------------------------------------------------------------
+    '  Created by        :  
+    '  Create Date       : 
+    '----------------------------------------------------------------------------------------------------------
+    '  Notes        : 
+    '----------------------------------------------------------------------------------------------------------
+    '**********************************************************************************************************
+	 */
+	
+	public static void TC_ToPlaceMultiLineMultiQuantity()
+	{
+		Assert.pass("Start-------> TC_ToPlaceMultiLineMultiQuantity");
+		System.out.println("Start-------> TC_ToPlaceMultiLineMultiQuantity");
+		
+		sTestCase ="TC_ToPlaceMultiLineMultiQuantity";
+				
+		sSheet="LTHomePage";
+		HomePage.openURL(sWorkBook, sSheet, sTestCase, iIteration, false);
+		HomePage.changeShipToUS(sWorkBook, sSheet, sTestCase, iIteration, false);
+		HomePage.searchItem(sWorkBook, sSheet, sTestCase, iIteration, false);
+		HomePage.addItemToBag(sWorkBook, sSheet, sTestCase, iIteration, false);
+		HomePage.searchSecondItem(sWorkBook, sSheet, sTestCase, iIteration, false);
+		HomePage.addItemToBag(sWorkBook, sSheet, sTestCase, iIteration, false);
+		
+		sSheet="LTCheckOutPage";
+		CheckOutPage.checkOut(sWorkBook, sSheet, sTestCase, iIteration, false);
+		
+		sSheet="LTShipBillPage";
+		ShippingBillingPage.shippingAndBillingAddress(sWorkBook, sSheet, sTestCase, iIteration, false);
+		
+		sSheet="LTPaymentPage";
+		PaymentPage.enterPaymentDetails(sWorkBook, sSheet, sTestCase, iIteration, false);
+		
+		sSheet="LTReviewSubmitPage";
+		ReviewSubmitPage.reviewSubmitOrder(sWorkBook, sSheet, sTestCase, iIteration, false);
+		
+		
+		
+		
+		Assert.pass("End-------> TC_ToPlaceMultiLineMultiQuantity");
+		System.out.println("End-------> TC_ToPlaceMultiLineMultiQuantity");
+	}
 }
