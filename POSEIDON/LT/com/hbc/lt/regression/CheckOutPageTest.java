@@ -7,7 +7,7 @@ import com.hbc.lt.reusable.HomePage;
 import com.hbc.lt.reusable.PaymentPage;
 import com.hbc.lt.reusable.ReviewSubmitPage;
 import com.hbc.lt.reusable.ShippingBillingPage;
-import com.hbc.lt.websom.LTFulfillmentPage;
+import com.hbc.lt.websom.SFSFulfilment;
 
 public class CheckOutPageTest {
 
@@ -87,10 +87,10 @@ public class CheckOutPageTest {
 		sTestCase ="TC_ToWebSomFulfillment";
 				
 		sSheet="LTWebsomPage";
-		LTFulfillmentPage.openWebsomURL(sWorkBook, sSheet, sTestCase, iIteration, false);
-		LTFulfillmentPage.searchShipemnt(sWorkBook, sSheet, sTestCase, iIteration, false);
-		LTFulfillmentPage.packOrder(sWorkBook, sSheet, sTestCase, iIteration, false);
-		LTFulfillmentPage.carrierShipment(sWorkBook, sSheet, sTestCase, iIteration, false);
+		SFSFulfilment.openWebsomURL(sWorkBook, sSheet, sTestCase, iIteration, false);
+		SFSFulfilment.searchShipemnt(sWorkBook, sSheet, sTestCase, iIteration, false);
+		SFSFulfilment.packOrder(sWorkBook, sSheet, sTestCase, iIteration, false);
+		SFSFulfilment.carrierShipment(sWorkBook, sSheet, sTestCase, iIteration, false);
 		
 		
 		Assert.pass("End-------> TC_ToWebSomFulfillment");

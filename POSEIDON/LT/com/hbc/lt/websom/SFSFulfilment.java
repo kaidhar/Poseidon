@@ -2,6 +2,9 @@ package com.hbc.lt.websom;
 
 import static com.hbc.acoe.framework.selenium.FrameworkDriver.driver;
 
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 import com.hbc.acoe.framework.config.Environment;
@@ -14,7 +17,7 @@ import com.hbc.lt.reusable.GenericActions;
 import static com.hbc.lt.reusable.HomePage.bErrorFound;
 import static com.hbc.lt.reusable.ReviewSubmitPage.sOnlyOrderNum;
 
-public class LTFulfillmentPage {
+public class SFSFulfilment {
 
 
 
@@ -32,7 +35,7 @@ public class LTFulfillmentPage {
 	 */
 
 
-	public static void openWebsomURL(String sWorkBook, String sSheet, String sTestCase, int iIteration, boolean bExpectFailure)
+	public void openWebsomURL(String OrderID, String Banner)
 	{
 
 		if(!bErrorFound)
@@ -41,7 +44,7 @@ public class LTFulfillmentPage {
 			String sScreenName = "LTWebsomPagePG.";
 			String appURL = "";
 			String[] aTXFields= {"userNameTX","loginPasswordTX","storeIDTX"};
-			//need to add the store number form API, karthikay need to integrate it 
+			//need to add the store number form API, K need to integrate it 
 			try
 			{
 				appURL = Environment.get("appWEBSOMURL");
@@ -51,9 +54,9 @@ public class LTFulfillmentPage {
 				driver.manage().timeouts().pageLoadTimeout(120, TimeUnit.SECONDS);
 				driver.manage().window().fullscreen();
 
-				DataTable oTestData=new DataTable(sWorkBook, sSheet, sTestCase);
+				//DataTable oTestData=new DataTable(sWorkBook, sSheet, sTestCase);
 				GenericActions.driver_WaitForElementVisible(sScreenName+"userNameTX");
-				GenericActions.dataModify(sScreenName, oTestData, aTXFields, null, null, null, null, iIteration);
+				//GenericActions.dataModify(sScreenName, oTestData, aTXFields, null, null, null, null, iIteration);
 				driver.findElement(By.logicalName(sScreenName+"loginBN")).click();
 				GenericActions.driver_WaitForElementVisible(sScreenName+"searchShipmentBN");
 
@@ -93,7 +96,7 @@ public class LTFulfillmentPage {
 	 */
 
 
-	public static void searchShipemnt(String sWorkBook, String sSheet, String sTestCase, int iIteration, boolean bExpectFailure)
+	public  void searchShipemnt(String OrderID,String ShipNode)
 	{
 
 		if(!bErrorFound)
@@ -151,7 +154,7 @@ public class LTFulfillmentPage {
 	 */
 
 
-	public static void packOrder(String sWorkBook, String sSheet, String sTestCase, int iIteration, boolean bExpectFailure)
+	public void packOrder(String OrderID, String Banner)
 	{
 
 		if(!bErrorFound)
@@ -283,7 +286,7 @@ public class LTFulfillmentPage {
 	 */
 
 
-	public static void carrierShipment(String sWorkBook, String sSheet, String sTestCase, int iIteration, boolean bExpectFailure)
+	public  void carrierShipment(String OrderID, String Banner)
 	{
 
 		if(!bErrorFound)
@@ -344,4 +347,12 @@ public class LTFulfillmentPage {
 		}
 
 	}
+	
+	
+	
+
+	}
+	
+	
+	
 }
