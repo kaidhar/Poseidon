@@ -211,7 +211,8 @@ public class HomePage {
 
 			String sScreenName = "LTHomePagePG.";
 			String[] aTXFields= {"numberOfQuantityTX"}; 
-			
+			String[] aRBFields = {"pickupinStoreBN"};
+			String[] aTXFields1= {"zipCodeTX"}; 
 			try
 			{
 				System.out.println("Start --> starting addItemToBag ");
@@ -244,6 +245,15 @@ public class HomePage {
 				}
 				
 				GenericActions.dataModify(sScreenName, oTestData, aTXFields, null, null, null, null, iIteration);
+				
+				if(!((oTestData.getValue("pickupinStoreBN"))=="NA" && (oTestData.getValue("pickupinStoreBN")==null)))
+				{
+					GenericActions.dataModify(sScreenName, oTestData, null, null, aRBFields, null, null, iIteration);
+					GenericActions.dataModify(sScreenName, oTestData, aTXFields1, null, null, null, null, iIteration);
+					
+					driver.findElement(By.logicalName(sScreenName+"checkStoreBN")).click();
+					Assert.pass("Clicked on check stores button");
+				}
 				
 				driver.findElement(By.logicalName(sScreenName+"addToBagBN")).click();
 				Assert.pass("Clicked on add to bag button");
