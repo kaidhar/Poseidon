@@ -1,6 +1,9 @@
 package com.BaseClass;
 
 import com.helper.BrowserFactory;
+
+import com.helper.*;
+
 import com.pageobjects.*;
 
 import java.io.FileInputStream;
@@ -49,6 +52,7 @@ public class SingleLineAllTenderTypes {
 			skusearch.SearchSku();
 
 			AddtoCart_page cart = PageFactory.initElements(driver, AddtoCart_page.class);
+			cart.selectColor("");
 			cart.Addtocart();
 			cart.Checkout();
 			Thread.sleep(3000);
@@ -87,15 +91,14 @@ public class SingleLineAllTenderTypes {
 		}
 	}
 
-	@Test(priority = 1, enabled = true)
 	public String SingleLineAmex() {
-		WebDriver driver = BrowserFactory.launchBrowser("chrome", "https://www.qa.saks.com/Entry.jsp");
+		this.loadPropertiesFile();
+		WebDriver driver = BrowserFactory.launchBrowser(prop.getProperty("Driver"), prop.getProperty("WebURL"));
 		String OrderID = null;
 		try {
 
 			Home_page homePage = PageFactory.initElements(driver, Home_page.class);
 			Thread.sleep(3000);
-			;
 			homePage.Close_popup();
 			homePage.Change_country();
 			homePage.SwitchToUS();
@@ -150,7 +153,6 @@ public class SingleLineAllTenderTypes {
 		return OrderID;
 	}
 
-	@Test(priority = 2, enabled = false)
 	public void singleLineDiscover() {
 		WebDriver driver = BrowserFactory.launchBrowser("chrome", "http://qaslot5.saksdirect.com/");
 		try {
@@ -201,7 +203,7 @@ public class SingleLineAllTenderTypes {
 
 	}
 
-	@Test(priority = 3, enabled = false)
+
 	public void SingleLineMastercard() {
 		WebDriver driver = BrowserFactory.launchBrowser("chrome", "http://qaslot5.saksdirect.com/");
 		// int iFrameSize = driver.findElements(By.tagName("iframe")).size();

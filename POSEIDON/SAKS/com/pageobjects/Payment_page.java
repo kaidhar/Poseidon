@@ -1,129 +1,142 @@
 package com.pageobjects;
-import org.openqa.selenium.support.FindBy;
+
+import org.openqa.selenium.By;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.How;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import com.helper.Utilities;
 
 public class Payment_page {
 
+	WebDriver driver;
+	WebDriverWait wait = null;
+	WebElement ele;
+	Utilities prop = new Utilities();
 
-    static WebDriver driver;
+	public Payment_page(WebDriver ldriver) {
+		wait = new WebDriverWait(ldriver, 20);
+		this.driver = ldriver;
+	}
 
-    public Payment_page (WebDriver ldriver) {
-        this.driver = ldriver;
-    }
 
-    @FindBy(how = How.XPATH,using = ".//*[@class=\"tab-label tab-label--active tab-label--radio\"]")
-    WebElement Selecttype;
 
-    @FindBy(how = How.ID,using = "ccnumber")
-    static WebElement CCnumber;
+	public void SelectType() {
+		Actions actions = new Actions(driver);
+		try {
+			ele = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(prop.getProperty("Selecttype"))));
+			actions.moveToElement(ele);
+			actions.click();
+			actions.build().perform();
 
-    @FindBy(how = How.ID,using = "nameoncard")
-    WebElement Ccname;
+		} catch (Exception e) {
+			System.out.println("Unable to click selectType");
+			e.printStackTrace();
+		}
 
-    @FindBy(how = How.ID,using = "month")
-    WebElement CcMonth;
+	}
 
-    @FindBy(how = How.ID,using = "cvc")
-    WebElement Ccvv;
+	public WebElement cardnumber(String cardType) {
+		
+		try {
+			ele = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id(prop.getProperty("CCnumber"))));
+			
+			if (cardType.equalsIgnoreCase("VISA")) {
+				ele.click();
+				ele.sendKeys(prop.getProperty("VISACard"));
+			} else if (cardType.equalsIgnoreCase("MASTERCARD")) {
+				ele.click();
+				ele.sendKeys(prop.getProperty("MASTERCard"));
+			} else if (cardType.equalsIgnoreCase("AMEX")) {
+				ele.click();
+				ele.sendKeys(prop.getProperty("AMEXCard"));
+			} else if (cardType.equalsIgnoreCase("DISCOVER")) {
+				ele.click();
+				ele.sendKeys(prop.getProperty("DISCOVERCard"));
+			} else if (cardType.equalsIgnoreCase("Storecard")) {
+				ele.click();
+				ele.sendKeys(prop.getProperty("StoreCard"));
+			}
 
-    @FindBy(how = How.XPATH,using = ".//*[@class='hbc-button hbc-button--primary hbc-checkout__page-submit-button']")
-    WebElement CompletePay;
+		} catch (Exception e) {
+			System.out.println("Unable to click selectType and enter the card number");
+			e.printStackTrace();
+		}
 
-public void SelectType()
-{
-    Actions actions = new Actions(driver);
-    actions.moveToElement(Selecttype);
-    actions.click();
-    actions.build().perform();
+		return ele;
+
+	}
+
+	public void CardName() {
+		Actions actions = new Actions(driver);
+
+		try {
+			ele = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id(prop.getProperty("Ccname"))));
+			actions.moveToElement(ele);
+			actions.click();
+			actions.sendKeys(prop.getProperty("CardHolderName"));
+			actions.build().perform();
+
+		} catch (Exception e) {
+			System.out.println("Unable to enter name of the card holder");
+			e.printStackTrace();
+		}
+
+	}
+
+	public void CardYear() {
+
+		Actions actions = new Actions(driver);
+
+		try {
+			ele = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id(prop.getProperty("CcMonth"))));
+			actions.moveToElement(ele);
+			actions.click();
+			actions.sendKeys(prop.getProperty("DateandYear"));
+			actions.build().perform();
+
+		} catch (Exception e) {
+			System.out.println("Unable to enter the Date and Year");
+			e.printStackTrace();
+		}
+
+	}
+
+	public void CardCvv() {
+		Actions actions = new Actions(driver);
+		
+		try {
+			ele = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id(prop.getProperty("CVV"))));
+			actions.moveToElement(ele);
+			actions.click();
+			actions.sendKeys(prop.getProperty("CVVNumber"));
+			actions.build().perform();
+
+		} catch (Exception e) {
+			System.out.println("Unable to enter Card CVV");
+			e.printStackTrace();
+		}
+	}
+	
+	
+	public void confirmPayment() {
+		
+		
+		try {
+			ele = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(prop.getProperty("CompletePay"))));
+			ele.click();
+			
+
+		} catch (Exception e) {
+			System.out.println("Unable to click confirmPayment");
+			e.printStackTrace();
+		}
+	}
 
 }
 
-    public static WebElement cardnumber (String cardnumbers) {
-        if (cardnumbers.equalsIgnoreCase("VISA"))
-        {
-            Actions actions = new Actions(driver);
-            actions.moveToElement(CCnumber);
-            actions.click();
-            actions.sendKeys("4895390000000013");
-            actions.build().perform();
-        }
-        else if (cardnumbers.equalsIgnoreCase( "MASTERCARD" ))
-        {
-            Actions actions = new Actions(driver);
-            actions.moveToElement(CCnumber);
-            actions.click();
-            actions.sendKeys("5454545454545454");
-            actions.build().perform();
-        }
-        else if(cardnumbers.equalsIgnoreCase( "AMEX" ))
-        {
-            Actions actions = new Actions(driver);
-            actions.moveToElement(CCnumber);
-            actions.click();
-            actions.sendKeys("373953192351004");
-            actions.build().perform();
-        }
-        else if(cardnumbers.equalsIgnoreCase( "DISCOVER" ))
-        {
-            Actions actions = new Actions(driver);
-            actions.moveToElement(CCnumber);
-            actions.click();
-            actions.sendKeys("6011020000045098");
-            actions.build().perform();
-        }
-        else if(cardnumbers.equalsIgnoreCase( "Storecard" ))
-        {
-            Actions actions = new Actions(driver);
-            actions.moveToElement(CCnumber);
-            actions.click();
-            actions.sendKeys("8091179005");
-            actions.build().perform();
-        }
-        return  CCnumber;
-
-    }
 
 
-    public void CardName()
-    {
-        Actions actions = new Actions(driver);
-        actions.moveToElement(Ccname);
-        actions.click();
-        actions.sendKeys("sanjay");
-        actions.build().perform();
-
-    }
-
-
-
-    public void CardYear()
-    {
-        {
-            Actions actions = new Actions(driver);
-            actions.moveToElement(CcMonth);
-            actions.click();
-            actions.sendKeys("122021");
-            actions.build().perform();
-        }
-
-
-    }
-    public void CardCvv()
-    {
-        Actions actions = new Actions(driver);
-        actions.moveToElement(Ccvv);
-        actions.click();
-        actions.sendKeys("111");
-        actions.build().perform();
-    }
-
-    public void confirmPayment()
-    {
-        CompletePay.click();
-    }
-
-}

@@ -1,102 +1,162 @@
 package com.BaseClass;
 
 
-import com.helper.BrowserFactory;
+import com.helper.*;
+
 import com.pageobjects.*;
+
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.Properties;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 
 
 
 public class MultiqunatityAllTenderTypes {
+	
+	static boolean result = false;
+	Properties prop = new Properties();
+	InputStream input = null;
 
+	public void loadPropertiesFile() {
+		String filepath = System.getProperty("user.dir") + "//Testdata/SAKS.properties";
 
-    @Test(priority = 0, enabled = true)
-    public void SinglineVisa() throws InterruptedException {
-        {
-            WebDriver driver = BrowserFactory.launchBrowser("chrome", "https://www.qa.saks.com/Entry.jsp");
-            //int iFrameSize = driver.findElements(By.tagName("iframe")).size();
-            try {
-            /*int iFrameSize = driver.findElements(By.tagName("iframe")).size();
-            System.out.print("Size" + iFrameSize);
-            driver.switchTo().defaultContent();
-            Thread.sleep(2000);
-            driver.switchTo().frame(4);
-            driver.findElement(By.xpath("//*[@name='saksSignUpEmail']")).sendKeys("Hiiii");
-            Thread.sleep(2000);
+		try {
+			input = new FileInputStream(filepath);
+			prop.load(input);
+		} catch (IOException e) {
+			System.out.println("File not found");
+			e.printStackTrace();
+		}
+	}
 
-        for (int i = 0; i < iFrameSize; i++) {
-            driver.switchTo().defaultContent();
-            Thread.sleep(3000);
-            driver.switchTo().frame(i);
-            Thread.sleep(2000);
-            if (driver.findElements(By.xpath("//*[@name='saksSignUpEmail']")).size() != 0) {
-                System.out.println("Element is Present");
-                driver.findElement(By.xpath("//*[@name='saksSignUpEmail']")).sendKeys("Hiiii");
+	public String MultiqtyAmex() {
+		WebDriver driver = BrowserFactory.launchBrowser("chrome", "https://www.qa.saks.com/Entry.jsp");
+		String OrderID = null;
+		try {
 
-            } else {
-                System.out.println("Element is Absent");
-            }
-        }*/
+			Home_page homePage = PageFactory.initElements(driver, Home_page.class);
+			Thread.sleep(3000);
+			homePage.Close_popup();
+			homePage.Change_country();
+			homePage.SwitchToUS();
 
+			SkuSearchpage skusearch = PageFactory.initElements(driver, SkuSearchpage.class);
+			skusearch.SearchSku();
 
-                //}
-                //driver.switchTo().frame().
+			AddtoCart_page cart = PageFactory.initElements(driver, AddtoCart_page.class);
+			cart.selectColor("Tahoe");
+			cart.Increment();
+			cart.Addtocart();
+			cart.Checkout();
+			cart.Checkout2();
+			cart.select_user();
 
+			ShippingInfo_page ship = PageFactory.initElements(driver, ShippingInfo_page.class);
+			ship.firstname();
+			Thread.sleep(2000);
+			ship.lastname();
+			ship.address();
+			ship.selectstate();
+			ship.city();
+			ship.email();
+			ship.phone();
+			ship.Postal();
+			// ship.CtnCheckout();
+			Thread.sleep(3000);
+			ship.confirmAdd();
 
-                Home_page homePage = PageFactory.initElements(driver, Home_page.class);
-                homePage.Close_popup();
-                homePage.Change_country();
-                homePage.SwitchToUS();
+			Payment_page pay = PageFactory.initElements(driver, Payment_page.class);
+			pay.SelectType();
+			Thread.sleep(2000);
+			pay.cardnumber("Visa");
+			Thread.sleep(2000);
+			pay.CardName();
+			pay.CardYear();
+			pay.CardCvv();
+			pay.confirmPayment();
+			Thread.sleep(3000);
 
-                SkuSearchpage skusearch = PageFactory.initElements(driver, SkuSearchpage.class);
-                skusearch.SearchSku();
+			OrderConfirm_page cnfrm = PageFactory.initElements(driver, OrderConfirm_page.class);
+			cnfrm.PlaceOrder();
+			Thread.sleep(2000);
+			result = cnfrm.GetorderNumber();
+			Assert.assertEquals(true, result);
+			OrderID = cnfrm.ReturnorderNumber();
 
+		} catch (Exception e) {
+			driver.quit();
+		}
+		return OrderID;
+	}
+	
+	public String MultiLineAmex() {
+		WebDriver driver = BrowserFactory.launchBrowser("chrome", "https://www.qa.saks.com/Entry.jsp");
+		String OrderID = null;
+		try {
 
-                AddtoCart_page cart = PageFactory.initElements(driver, AddtoCart_page.class);
-                cart.selectColor("Tahoe");
-                cart.Addtocart();
-                Thread.sleep(2000);
-                cart.Checkout();
-                cart.Checkout2();
-                Thread.sleep(3000);
-                cart.select_user();
+			Home_page homePage = PageFactory.initElements(driver, Home_page.class);
+			Thread.sleep(3000);
+			homePage.Close_popup();
+			homePage.Change_country();
+			homePage.SwitchToUS();
 
-                ShippingInfo_page ship = PageFactory.initElements(driver, ShippingInfo_page.class);
-                ship.firstname();
-                Thread.sleep(2000);
-                ship.lastname();
-                ship.address();
-                ship.selectstate();
-                ship.city();
-                ship.email();
-                ship.phone();
-                ship.Postal();
-                //ship.CtnCheckout();
-                Thread.sleep(3000);
-                ship.confirmAdd();
+			SkuSearchpage skusearch = PageFactory.initElements(driver, SkuSearchpage.class);
+			skusearch.SearchSku();
+			
+			AddtoCart_page cart1 = PageFactory.initElements(driver, AddtoCart_page.class);
+			cart1.selectColor("Tahoe");
+			cart1.Addtocart();
+			cart1.HideChekout();
+			cart1.selectColor("Benares");
+			cart1.Addtocart();
+			cart1.Checkout();
+			cart1.Checkout2();
+			cart1.select_user();
 
-                Payment_page pay = PageFactory.initElements(driver, Payment_page.class);
-                Thread.sleep(2000);
-                pay.cardnumber("AMEX");
-                Thread.sleep(2000);
-                pay.CardName();
-                pay.CardYear();
-                pay.CardCvv();
-                pay.confirmPayment();
-                Thread.sleep(3000);
+			ShippingInfo_page ship = PageFactory.initElements(driver, ShippingInfo_page.class);
+			ship.firstname();
+			Thread.sleep(2000);
+			ship.lastname();
+			ship.address();
+			ship.selectstate();
+			ship.city();
+			ship.email();
+			ship.phone();
+			ship.Postal();
+			// ship.CtnCheckout();
+			Thread.sleep(3000);
+			ship.confirmAdd();
 
-                OrderConfirm_page cnfrm = PageFactory.initElements(driver, OrderConfirm_page.class);
-                cnfrm.PlaceOrder();
+			Payment_page pay = PageFactory.initElements(driver, Payment_page.class);
+			pay.SelectType();
+			Thread.sleep(2000);
+			pay.cardnumber("Visa");
+			Thread.sleep(2000);
+			pay.CardName();
+			pay.CardYear();
+			pay.CardCvv();
+			pay.confirmPayment();
+			Thread.sleep(3000);
 
+			OrderConfirm_page cnfrm = PageFactory.initElements(driver, OrderConfirm_page.class);
+			cnfrm.PlaceOrder();
+			Thread.sleep(2000);
+			result = cnfrm.GetorderNumber();
+			Assert.assertEquals(true, result);
+			OrderID = cnfrm.ReturnorderNumber();
 
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        }
-    }
-}
+		} catch (Exception e) {
+			driver.quit();
+		}
+		return OrderID;
+	}
+}	

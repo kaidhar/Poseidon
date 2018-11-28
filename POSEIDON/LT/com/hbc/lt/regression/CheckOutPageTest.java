@@ -8,7 +8,6 @@ import com.hbc.lt.reusable.PaymentPage;
 import com.hbc.lt.reusable.ReviewSubmitPage;
 import com.hbc.lt.reusable.ShippingBillingPage;
 
-
 public class CheckOutPageTest {
 
 	
@@ -66,5 +65,5 @@ public class CheckOutPageTest {
 	}
 	
 	
-	
+
 }
