@@ -2,9 +2,6 @@ package com.hbc.lt.websom;
 
 import static com.hbc.acoe.framework.selenium.FrameworkDriver.driver;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 import com.hbc.acoe.framework.config.Environment;
@@ -17,7 +14,7 @@ import com.hbc.lt.reusable.GenericActions;
 import static com.hbc.lt.reusable.HomePage.bErrorFound;
 import static com.hbc.lt.reusable.ReviewSubmitPage.sOnlyOrderNum;
 
-public class SFSFulfilment {
+public class WEBSOMFulfillmentPage {
 
 
 
@@ -35,7 +32,7 @@ public class SFSFulfilment {
 	 */
 
 
-	public void openWebsomURL(String OrderID, String Banner)
+	public static void openWebsomURL(String sWorkBook, String sSheet, String sTestCase, int iIteration, boolean bExpectFailure)
 	{
 
 		if(!bErrorFound)
@@ -44,7 +41,7 @@ public class SFSFulfilment {
 			String sScreenName = "LTWebsomPagePG.";
 			String appURL = "";
 			String[] aTXFields= {"userNameTX","loginPasswordTX","storeIDTX"};
-			//need to add the store number form API, K need to integrate it 
+			//need to add the store number form API, karthikay need to integrate it 
 			try
 			{
 				appURL = Environment.get("appWEBSOMURL");
@@ -54,9 +51,9 @@ public class SFSFulfilment {
 				driver.manage().timeouts().pageLoadTimeout(120, TimeUnit.SECONDS);
 				driver.manage().window().fullscreen();
 
-				//DataTable oTestData=new DataTable(sWorkBook, sSheet, sTestCase);
+				DataTable oTestData=new DataTable(sWorkBook, sSheet, sTestCase);
 				GenericActions.driver_WaitForElementVisible(sScreenName+"userNameTX");
-				//GenericActions.dataModify(sScreenName, oTestData, aTXFields, null, null, null, null, iIteration);
+				GenericActions.dataModify(sScreenName, oTestData, aTXFields, null, null, null, null, iIteration);
 				driver.findElement(By.logicalName(sScreenName+"loginBN")).click();
 				GenericActions.driver_WaitForElementVisible(sScreenName+"searchShipmentBN");
 
@@ -96,7 +93,7 @@ public class SFSFulfilment {
 	 */
 
 
-	public  void searchShipemnt(String OrderID,String ShipNode)
+	public static void searchShipemnt(String sWorkBook, String sSheet, String sTestCase, int iIteration, boolean bExpectFailure)
 	{
 
 		if(!bErrorFound)
@@ -154,7 +151,7 @@ public class SFSFulfilment {
 	 */
 
 
-	public void packOrder(String OrderID, String Banner)
+	public static void packOrder(String sWorkBook, String sSheet, String sTestCase, int iIteration, boolean bExpectFailure)
 	{
 
 		if(!bErrorFound)
@@ -286,7 +283,7 @@ public class SFSFulfilment {
 	 */
 
 
-	public  void carrierShipment(String OrderID, String Banner)
+	public static void carrierShipment(String sWorkBook, String sSheet, String sTestCase, int iIteration, boolean bExpectFailure)
 	{
 
 		if(!bErrorFound)
@@ -349,14 +346,6 @@ public class SFSFulfilment {
 	}
 	
 	
-<<<<<<< HEAD:POSEIDON/LT/com/hbc/lt/websom/SFSFulfilment.java
-	
-
-	}
-	
-	
-	
-=======
 	/*
     '**********************************************************************************************************
     '  Name         :  
@@ -433,5 +422,4 @@ public class SFSFulfilment {
 
 	}
 	
->>>>>>> Yogiraj:POSEIDON/LT/com/hbc/lt/websom/LTFulfillmentPage.java
 }
