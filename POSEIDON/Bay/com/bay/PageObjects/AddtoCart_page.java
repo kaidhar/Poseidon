@@ -39,7 +39,6 @@ public class AddtoCart_page {
 		;
 		js.executeScript("arguments[0].click();", selectsize);
 	}
-	
 
 	public void Addtocart() {
 		try {
@@ -49,42 +48,6 @@ public class AddtoCart_page {
 
 		} catch (Exception e) {
 			System.out.println("Unable to add to cart");
-			e.printStackTrace();
-		}
-	}
-	
-	public void StorePickup() {
-		try {
-
-			ele = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(prop.getProperty("StorePickup"))));
-			ele.click();
-
-		} catch (Exception e) {
-			System.out.println("Store Pickup not available");
-			e.printStackTrace();
-		}
-	}
-	
-	public void EnterPostalCode() {
-		try {
-
-			ele = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(prop.getProperty("enterZipcode"))));
-			ele.sendKeys(prop.getProperty("postalcode"));
-
-		} catch (Exception e) {
-			System.out.println("Not able to enter Zipcode");
-			e.printStackTrace();
-		}
-	}
-	
-	public void CheckStores() {
-		try {
-
-			ele = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(prop.getProperty("checkstores"))));
-			ele.click();
-
-		} catch (Exception e) {
-			System.out.println("Check stores Disabled");
 			e.printStackTrace();
 		}
 	}
@@ -117,7 +80,7 @@ public class AddtoCart_page {
 		try {
 
 			ele = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(prop.getProperty("selectuser"))));
-			ele.click();
+			ele.click()
 
 		} catch (Exception e) {
 			System.out.println("unable to select user");
