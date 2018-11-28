@@ -7,7 +7,6 @@ import com.hbc.lt.reusable.HomePage;
 import com.hbc.lt.reusable.PaymentPage;
 import com.hbc.lt.reusable.ReviewSubmitPage;
 import com.hbc.lt.reusable.ShippingBillingPage;
-import com.hbc.lt.websom.SFSFulfilment;
 
 public class CheckOutPageTest {
 
@@ -66,18 +65,5 @@ public class CheckOutPageTest {
 	}
 	
 	
-	/*
-    '**********************************************************************************************************
-    '  Name         :  
-    '  Description  :  
-    '----------------------------------------------------------------------------------------------------------
-    '  Created by        :  
-    '  Create Date       : 
-    '----------------------------------------------------------------------------------------------------------
-    '  Notes        : 
-    '----------------------------------------------------------------------------------------------------------
-    '**********************************************************************************************************
-	 */
-	
-	
+
 }
