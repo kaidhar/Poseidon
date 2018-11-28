@@ -92,7 +92,8 @@ public class SingleLineAllTenderTypes {
 	}
 
 	public String SingleLineAmex() {
-		WebDriver driver = BrowserFactory.launchBrowser("chrome", "https://www.qa.saks.com/Entry.jsp");
+		this.loadPropertiesFile();
+		WebDriver driver = BrowserFactory.launchBrowser(prop.getProperty("Driver"), prop.getProperty("WebURL"));
 		String OrderID = null;
 		try {
 
