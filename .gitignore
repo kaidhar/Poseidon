@@ -16,3 +16,4 @@ POSEIDON/test-output/old/Default suite/testng.xml.html
 POSEIDON/test-output/old/Default suite/toc.html
 POSEIDON/test-output/old/index.html
 POSEIDON/test-output/testng-results.xml
+/target/
