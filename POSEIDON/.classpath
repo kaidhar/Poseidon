@@ -31,8 +31,11 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="con" path="org.testng.TESTNG_CONTAINER"/>
+<<<<<<< HEAD
+=======
 
 	<classpathentry kind="lib" path="LTResource/lib/Asel3.jar"/>
 
+>>>>>>> branch 'master' of https://github.com/kaidhar/Poseidon.git
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

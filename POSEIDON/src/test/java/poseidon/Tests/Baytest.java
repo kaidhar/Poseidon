@@ -28,7 +28,7 @@ public class Baytest {
 		OMSCalls Calls = new OMSCalls();
 		Calls.AgentRuns(OrderID, Banner);
 		Calls.ShipmentCall(OrderID, Banner);
-
+	
 	}
 
 }
