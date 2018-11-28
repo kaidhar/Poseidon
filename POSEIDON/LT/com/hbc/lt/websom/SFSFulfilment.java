@@ -356,4 +356,82 @@ public class SFSFulfilment {
 	
 	
 	
+=======
+	/*
+    '**********************************************************************************************************
+    '  Name         :  
+    '  Description  :  
+    '----------------------------------------------------------------------------------------------------------
+    '  Created by        :  
+    '  Create Date       : 
+    '----------------------------------------------------------------------------------------------------------
+    '  Notes        : 
+    '----------------------------------------------------------------------------------------------------------
+    '**********************************************************************************************************
+	 */
+
+
+	public static void startBagging(String sWorkBook, String sSheet, String sTestCase, int iIteration, boolean bExpectFailure)
+	{
+
+		if(!bErrorFound)
+		{
+			Assert.pass("Start --> startBagging");
+			String sScreenName = "LTWebsomPagePG.";
+			String sNumberOfQaq="";
+			String[] aTXFields = {"carrierNameTX"};
+
+			try
+			{
+				System.out.println("Start --> startBagging");
+				DataTable oTestData=new DataTable(sWorkBook, sSheet, sTestCase);
+				
+				driver.findElement(By.logicalName(sScreenName+"homeWE")).click();
+				Assert.pass("Clicked on pack home link");
+				GenericActions.driver_WaitForElementVisible(sScreenName+"carrierNameTX");
+				GenericActions.dataModify(sScreenName, oTestData, aTXFields, null, null, null, null, iIteration);
+				
+				driver.findElement(By.logicalName(sScreenName+"carrierGoBN")).click();
+				GenericActions.driver_WaitForElementVisible(sScreenName+"loadingIconWE");
+				GenericActions.driver_WaitForElementInvisible(sScreenName+"loadingIconWE");
+				Assert.pass("Clicked on carrier go  button ");
+				
+				GenericActions.driver_WaitForElementVisible(sScreenName+"carrierConfirmBN");
+				driver.findElement(By.logicalName(sScreenName+"carrierConfirmBN")).click();
+				Assert.pass("Clicked on carrier confirm button ");
+				System.out.println("Clicked on carrier confirm button ");
+				GenericActions.driver_WaitForElementVisible(sScreenName+"shipmentConfirmWE");
+				if(driver.findElement(By.logicalName(sScreenName+"shipmentConfirmWE")).getText().equalsIgnoreCase(oTestData.getValue("shipmentConfirmWE")))
+				{
+					Assert.pass("Order is shipped ");
+					System.out.println("Order is shipped ");
+				}
+				else
+				{
+					Assert.fail("Order is not shipped ");
+					System.err.println("Order is notshipped ");
+				}
+				
+
+			}
+			catch (Exception e) 
+			{
+				bErrorFound = true;
+				e.printStackTrace();
+				if(bExpectFailure)
+				{
+					System.out.println("Failure in startBagging of the application was expected!");
+					Assert.pass("Failure in startBagging of the application was expected!");
+				}
+				else
+				{
+					Assert.fail("startBagging  failed ("+e.getStackTrace()+")");
+				}
+			} 
+			Assert.pass("End --> startBagging");
+		}
+
+	}
+	
+>>>>>>> Yogiraj:POSEIDON/LT/com/hbc/lt/websom/LTFulfillmentPage.java
 }
