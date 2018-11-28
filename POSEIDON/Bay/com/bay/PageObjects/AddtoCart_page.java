@@ -88,6 +88,18 @@ public class AddtoCart_page {
 			e.printStackTrace();
 		}
 	}
+	
+	public void BopisCheckOut() {
+		try {
+
+			ele = driver.findElement(By.id(prop.getProperty("BopisCheckout")));
+			ele.click();
+
+		} catch (Exception e) {
+			System.out.println("first name not entered");
+			e.printStackTrace();
+		}
+	}
 
 	public void Checkout() {
 		try {

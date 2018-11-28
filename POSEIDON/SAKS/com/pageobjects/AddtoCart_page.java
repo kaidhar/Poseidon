@@ -2,7 +2,6 @@ package com.pageobjects;
 
 import org.openqa.selenium.*;
 
-
 import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -27,11 +26,60 @@ public class AddtoCart_page {
 
 	public void selectColor(String color) throws Exception {
 		Thread.sleep(2000);
-		WebElement selectColor = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[contains(text(),'" + color + "')]")));
+		WebElement selectColor = wait.until(
+				ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[contains(text(),'" + color + "')]")));
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		;
 		js.executeScript("arguments[0].click();", selectColor);
 
+	}
+
+	public void StorePickup() {
+		try {
+
+			ele = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(prop.getProperty("StorePickup"))));
+			ele.click();
+
+		} catch (Exception e) {
+			System.out.println("Unable to add to cart");
+			e.printStackTrace();
+		}
+	}
+
+	public void EnterPostalCode() {
+		try {
+
+			ele = driver.findElement(By.id(prop.getProperty("enterZipcode")));
+			ele.sendKeys("postalcode");
+
+		} catch (Exception e) {
+			System.out.println("first name not entered");
+			e.printStackTrace();
+		}
+	}
+	
+	public void BopisCheckOut() {
+		try {
+
+			ele = driver.findElement(By.id(prop.getProperty("BopisCheckout")));
+			ele.click();
+
+		} catch (Exception e) {
+			System.out.println("first name not entered");
+			e.printStackTrace();
+		}
+	}
+	
+	public void Checkstore() {
+		try {
+
+			ele = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(prop.getProperty("checkstores"))));
+			ele.click();
+
+		} catch (Exception e) {
+			System.out.println("Unable to add to cart");
+			e.printStackTrace();
+		}
 	}
 	
 
@@ -86,7 +134,8 @@ public class AddtoCart_page {
 	public void Increment() {
 		try {
 
-			ele = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(prop.getProperty("Multiquantity"))));
+			ele = wait
+					.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(prop.getProperty("Multiquantity"))));
 			ele.click();
 
 		} catch (Exception e) {
@@ -94,14 +143,13 @@ public class AddtoCart_page {
 			e.printStackTrace();
 		}
 	}
-	
+
 	public void HideChekout() {
 		try {
 			ele = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(prop.getProperty("HideCheckout"))));
 			ele.click();
-		}
-		catch (Exception e) {
+		} catch (Exception e) {
 			e.printStackTrace();
+		}
 	}
-}
 }
