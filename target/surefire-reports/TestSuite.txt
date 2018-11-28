@@ -1,0 +1,17 @@
+-------------------------------------------------------------------------------
+Test set: TestSuite
+-------------------------------------------------------------------------------
+Tests run: 2, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 0.568 sec <<< FAILURE!
+TestsForSAKS(poseidon.Tests.SaksTest)  Time elapsed: 0.009 sec  <<< FAILURE!
+java.lang.Error: Unresolved compilation problems: 
+	OMSCalls cannot be resolved to a type
+	OMSCalls cannot be resolved to a type
+	at poseidon.Tests.SaksTest.TestsForSAKS(SaksTest.java:32)
+
+runner(poseidon.Tests.SaksTest)  Time elapsed: 0 sec  <<< FAILURE!
+java.lang.Error: Unresolved compilation problems: 
+	OMSCalls cannot be resolved to a type
+	OMSCalls cannot be resolved to a type
+	at poseidon.Tests.SaksTest.TestsForSAKS(SaksTest.java:32)
+	at poseidon.Tests.SaksTest.runner(SaksTest.java:18)
+
