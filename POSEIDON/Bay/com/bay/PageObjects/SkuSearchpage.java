@@ -47,6 +47,16 @@ public class SkuSearchpage {
 		}
 
 	}
-
+    
+    public void BopisSkuSearch() {
+    	try {
+    		ele = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(prop.getProperty("Searchsku"))));
+			ele.sendKeys("0600088169190",Keys.ENTER);
+    	}
+    	catch (Exception e) {
+			System.out.println("Unable to enter and search webID");
+			e.printStackTrace();
+    }
+    }
 
 }
