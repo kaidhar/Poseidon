@@ -14,7 +14,7 @@ import com.hbc.lt.reusable.GenericActions;
 import static com.hbc.lt.reusable.HomePage.bErrorFound;
 import static com.hbc.lt.reusable.ReviewSubmitPage.sOnlyOrderNum;
 
-public class LTFulfillmentPage {
+public class WEBSOMFulfillmentPage {
 
 
 

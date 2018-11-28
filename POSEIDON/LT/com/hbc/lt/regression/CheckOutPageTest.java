@@ -7,7 +7,7 @@ import com.hbc.lt.reusable.HomePage;
 import com.hbc.lt.reusable.PaymentPage;
 import com.hbc.lt.reusable.ReviewSubmitPage;
 import com.hbc.lt.reusable.ShippingBillingPage;
-import com.hbc.lt.websom.LTFulfillmentPage;
+
 
 public class CheckOutPageTest {
 
@@ -66,34 +66,5 @@ public class CheckOutPageTest {
 	}
 	
 	
-	/*
-    '**********************************************************************************************************
-    '  Name         :  
-    '  Description  :  
-    '----------------------------------------------------------------------------------------------------------
-    '  Created by        :  
-    '  Create Date       : 
-    '----------------------------------------------------------------------------------------------------------
-    '  Notes        : 
-    '----------------------------------------------------------------------------------------------------------
-    '**********************************************************************************************************
-	 */
 	
-	public static void TC_ToWebSomFulfillment()
-	{
-		Assert.pass("Start-------> TC_ToWebSomFulfillment");
-		System.out.println("Start-------> TC_ToWebSomFulfillment");
-		
-		sTestCase ="TC_ToWebSomFulfillment";
-				
-		sSheet="LTWebsomPage";
-		LTFulfillmentPage.openWebsomURL(sWorkBook, sSheet, sTestCase, iIteration, false);
-		LTFulfillmentPage.searchShipemnt(sWorkBook, sSheet, sTestCase, iIteration, false);
-		LTFulfillmentPage.packOrder(sWorkBook, sSheet, sTestCase, iIteration, false);
-		LTFulfillmentPage.carrierShipment(sWorkBook, sSheet, sTestCase, iIteration, false);
-		
-		
-		Assert.pass("End-------> TC_ToWebSomFulfillment");
-		System.out.println("End-------> TC_ToWebSomFulfillment");
-	}
 }
