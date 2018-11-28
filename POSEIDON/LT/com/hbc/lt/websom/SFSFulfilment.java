@@ -333,7 +333,15 @@ public class SFSFulfilment {
 	}
 	
 	
+<<<<<<< HEAD:POSEIDON/LT/com/hbc/lt/websom/SFSFulfilment.java
+	
 
+	}
+	
+	
+	
+
+=======
 	/*
     '**********************************************************************************************************
     '  Name         :  
@@ -411,4 +419,4 @@ public class SFSFulfilment {
 	}
 	
 }
-
+>>>>>>> origin/Yogiraj:POSEIDON/LT/com/hbc/lt/websom/LTFulfillmentPage.java
