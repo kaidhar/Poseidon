@@ -37,7 +37,7 @@ public class SingleLineBopis {
 		}
 	}
 
-	public String  SinglineVisa() throws InterruptedException {
+	public String  SinglineVisa() throws Exception {
 		this.loadPropertiesFile();
 		WebDriver driver = BrowserFactory.launchBrowser("chrome", "https://qa.thebay.com");
 		String OrderID = "";
@@ -57,3 +57,10 @@ public class SingleLineBopis {
 			cart.Checkout2();
 			cart.select_user();
 		}
+		catch (IOException e) {
+			System.out.println("File not found");
+			e.printStackTrace();
+	}
+		return OrderID;
+}
+}
